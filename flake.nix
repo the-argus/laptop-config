@@ -24,15 +24,15 @@
     }@inputs: 
     let
       homeconfigs = (import ./settings.nix {
-          inherit audio-plugins nixpkgs nixpkgs-unstable;
+          inherit audio-plugins nixpkgs nixpkgs-unstable master-config;
         }).home-manager;
       nixconfigs = (import ./settings.nix {
-          inherit audio-plugins nixpkgs nixpkgs-unstable;
+          inherit audio-plugins nixpkgs nixpkgs-unstable master-config;
         }).nixos;
     in
     {
       nixosConfigurations = master-config.createNixosConfiguration nixconfigs;
-      homeConfigurations = master-config.createHomeConfiguration homeconfigs;
+      homeConfigurations.${homeconfigs.username} = (master-config.createHomeConfigurations homeconfigs);
       devShell."x86_64-linux" = nixconfigs.pkgs.mkShell { };
     };
 }

@@ -1,4 +1,4 @@
-{ audio-plugins, nixpkgs, nixpkgs-unstable, ... }:
+{ audio-plugins, nixpkgs, nixpkgs-unstable, master-config, ... }:
 let
   hardware = "laptop";
 
@@ -106,7 +106,7 @@ let
 
       overlays = [
         (self: super: {
-          plymouth-themes-package = import ./packages/plymouth-themes.nix ({
+          plymouth-themes-package = import (master-config + "/packages/plymouth-themes.nix") ({
             pkgs = super;
           } // plymouth);
         })
