@@ -23,19 +23,17 @@
     , master-config
     }@inputs:
     let
-      homeconfigs = (import ./settings.nix {
+      settings = import ./settings.nix {
         inherit audio-plugins nixpkgs nixpkgs-unstable master-config;
-      }).home-manager;
-      nixconfigs = (import ./settings.nix {
-        inherit audio-plugins nixpkgs nixpkgs-unstable master-config;
-      }).nixos;
+      };
     in
     {
-      nixosConfigurations = master-config.createNixosConfiguration nixconfigs;
+      nixosConfigurations = master-config.createNixosConfiguration settings;
       homeConfigurations = {
-        "${homeconfigs.username}" =
-          (master-config.createHomeConfigurations homeconfigs);
+        "${settings.username}" =
+          (master-config.createHomeConfigurations settings);
       };
-      devShell."x86_64-linux" = nixconfigs.pkgs.mkShell { };
+      devShell."x86_64-linux" =
+        (master-config.finalizeSettings settings).pkgs.mkShell { };
     };
 }
