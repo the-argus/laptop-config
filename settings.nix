@@ -26,11 +26,11 @@
   usesMouse = false; # enables xmousepasteblock for middle click
   hasBattery = true; # battery widget in tiling WMs
   optimization = {
-    arch = "tigerlake";
-    # use musl instead of glibc
-    useMusl = false;
-    # compile everything from source
-    useFlags = false;
+    arch = "tigerlake"; 
+    useMusl = true; # use musl instead of glibc
+    useFlags = false; # use USE
+    useClang = false; # cland stdenv
+    useNative = false; # native march
     # what optimizations to use (check https://github.com/fortuneteller2k/nixpkgs-f2k/blob/ca75dc2c9d41590ca29555cddfc86cf950432d5e/flake.nix#L237-L289)
     USE = [
       # "-O3"
