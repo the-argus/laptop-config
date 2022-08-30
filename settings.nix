@@ -27,7 +27,7 @@
   hasBattery = true; # battery widget in tiling WMs
   optimization = {
     arch = "tigerlake"; 
-    useMusl = true; # use musl instead of glibc
+    useMusl = false; # use musl instead of glibc
     useFlags = false; # use USE
     useClang = false; # cland stdenv
     useNative = false; # native march
