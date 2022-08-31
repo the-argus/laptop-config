@@ -7,7 +7,7 @@
 
   # dual booting with windows boot loader mounted on /efi
   boot = {
-    kernelParams = [ "quiet" "systemd.show_status=0" "loglevel=4" "rd.systemd.show_status=auto" "rd.udev.log-priority=3" ];
+    kernelParams = [ "intel_iommu=on" "quiet" "systemd.show_status=0" "loglevel=4" "rd.systemd.show_status=auto" "rd.udev.log-priority=3" ];
     loader = {
       efi = {
         canTouchEfiVariables = true;
