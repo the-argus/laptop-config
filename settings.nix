@@ -8,6 +8,7 @@
     "spotify-unwrapped"
     "reaper"
     "slack"
+    "discord"
   ];
   plymouth = let name = "rings"; in
     {
