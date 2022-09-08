@@ -1,6 +1,6 @@
 { audio-plugins, nixpkgs, nixpkgs-unstable, master-config, ... }:
 {
-  theme = (import master-config + "/modules/themes.nix").drifter;
+  theme = "drifter";
   system = "x86_64-linux";
   username = "argus";
   hostname = "evil";
