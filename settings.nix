@@ -1,6 +1,6 @@
 { audio-plugins, nixpkgs, nixpkgs-unstable, master-config, ... }:
 {
-  theme = "drifter";
+  # theme = "drifter";
   system = "x86_64-linux";
   username = "argus";
   hostname = "evil";
@@ -21,6 +21,7 @@
   additionalModules = [ audio-plugins.homeManagerModule ];
   additionalUserPackages = [
     #"steam"
+    "libreoffice-fresh"
   ]; # will be evaluated later
   hardwareConfiguration = [ ./hardware ];
   usesWireless = true; # install and autostart nm-applet
