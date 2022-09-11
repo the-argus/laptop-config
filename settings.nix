@@ -1,5 +1,10 @@
-{ audio-plugins, nixpkgs, nixpkgs-unstable, master-config, ... }:
 {
+  audio-plugins,
+  nixpkgs,
+  nixpkgs-unstable,
+  master-config,
+  ...
+}: {
   # theme = "gtk4";
   system = "x86_64-linux";
   username = "argus";
@@ -11,25 +16,26 @@
     "slack"
     "discord"
   ];
-  plymouth = let name = "rings"; in
-    {
-      themeName = name;
-      themePath = "pack_4/${name}";
-    };
-  extraExtraSpecialArgs = { inherit (audio-plugins) mpkgs; };
-  extraSpecialArgs = { };
-  additionalModules = [ audio-plugins.homeManagerModule ];
+  plymouth = let
+    name = "rings";
+  in {
+    themeName = name;
+    themePath = "pack_4/${name}";
+  };
+  extraExtraSpecialArgs = {inherit (audio-plugins) mpkgs;};
+  extraSpecialArgs = {};
+  additionalModules = [audio-plugins.homeManagerModule];
   additionalUserPackages = [
     #"steam"
     "libreoffice-fresh"
   ]; # will be evaluated later
-  hardwareConfiguration = [ ./hardware ];
+  hardwareConfiguration = [./hardware];
   usesWireless = true; # install and autostart nm-applet
   usesBluetooth = true; # install and autostart blueman applet
   usesMouse = false; # enables xmousepasteblock for middle click
   hasBattery = true; # battery widget in tiling WMs
   optimization = {
-    arch = "tigerlake"; 
+    arch = "tigerlake";
     useMusl = false; # use musl instead of glibc
     useFlags = false; # use USE
     useClang = false; # cland stdenv

@@ -1,13 +1,19 @@
-{ config, pkgs, useFlags, plymouth, hostname, username, ... }:
-
 {
+  config,
+  pkgs,
+  useFlags,
+  plymouth,
+  hostname,
+  username,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
 
   # dual booting with windows boot loader mounted on /efi
   boot = {
-    kernelParams = [ "intel_iommu=on" "quiet" "systemd.show_status=0" "loglevel=4" "rd.systemd.show_status=auto" "rd.udev.log-priority=3" ];
+    kernelParams = ["intel_iommu=on" "quiet" "systemd.show_status=0" "loglevel=4" "rd.systemd.show_status=auto" "rd.udev.log-priority=3"];
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -28,7 +34,7 @@
 
   boot.plymouth = {
     enable = true;
-    themePackages = [ pkgs.plymouth-themes-package ];
+    themePackages = [pkgs.plymouth-themes-package];
     theme = plymouth.themeName;
   };
 
@@ -102,8 +108,8 @@
 
   # networking-----------------------------------------------------------------
   networking.hostName = hostname;
-  networking.interfaces."wlp0s20f3" = { useDHCP = false; };
-  networking.wireless.interfaces = [ "wlp0s20f3" ];
+  networking.interfaces."wlp0s20f3" = {useDHCP = false;};
+  networking.wireless.interfaces = ["wlp0s20f3"];
   networking.networkmanager.enable = true;
   networking.useDHCP = false;
   # networking.wireless.enable = true;
