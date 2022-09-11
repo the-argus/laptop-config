@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1662692808,
-        "narHash": "sha256-2TCjhWpPyPicKNHYmg5RFcRlvL0UY6CHziCLQozYwl8=",
+        "lastModified": 1662857208,
+        "narHash": "sha256-mfas/h3oPKIN4RNMbXVRfwqX+SJUKeLRYUVirYYHSYY=",
         "owner": "the-argus",
         "repo": "audio-plugins-nix",
-        "rev": "73343fe65a9ca96e737f8618da61e25f444889e7",
+        "rev": "5148ba7577510573432d1ea2b4a596b2d73b8066",
         "type": "github"
       },
       "original": {
