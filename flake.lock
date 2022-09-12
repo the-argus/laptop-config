@@ -511,11 +511,11 @@
         "webcord": "webcord_2"
       },
       "locked": {
-        "lastModified": 1662947843,
-        "narHash": "sha256-GA4MY085YU98zczfnsW6uCtaaqP/pE2wL6Ed/r0HCTo=",
+        "lastModified": 1662950490,
+        "narHash": "sha256-rajDG3utME/F6TdwIUPs44soARIx59+NOZPNCJzeUqA=",
         "owner": "the-argus",
         "repo": "webcord-flake",
-        "rev": "5212827a7c36aec2171726dd2da42d68eed06dbc",
+        "rev": "331ea613f4f8026c136f54d9f293c06662888301",
         "type": "github"
       },
       "original": {
