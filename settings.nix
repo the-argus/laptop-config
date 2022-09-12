@@ -5,10 +5,11 @@
   master-config,
   ...
 }: {
-  # theme = "gtk4";
+  theme = "nord";
   system = "x86_64-linux";
   username = "argus";
   hostname = "evil";
+  terminal = "kitty";
   # unfree packages that i explicitly use
   allowedUnfree = [
     "spotify-unwrapped"
