@@ -5,7 +5,7 @@
   master-config,
   ...
 }: {
-  theme = "nordic";
+  theme = "defaultTheme";
   system = "x86_64-linux";
   username = "argus";
   hostname = "evil";
