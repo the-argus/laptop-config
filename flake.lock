@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1662956617,
-        "narHash": "sha256-U554KNpjOWLb5Y6+JPj45FM9Cegb+Dh8dql2qs2Vu48=",
+        "lastModified": 1663031784,
+        "narHash": "sha256-fCJYz1STMiZj4kKJS3Bey1v5Hv1ax9LbBxVs655k3MM=",
         "owner": "the-argus",
         "repo": "audio-plugins-nix",
-        "rev": "6582b363ba6eabcb308c3c50070531b733a5d59e",
+        "rev": "872dfa5b5f2fe2be4f34cdc1cee8b5b6f0038de7",
         "type": "github"
       },
       "original": {
@@ -69,11 +69,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1662956617,
-        "narHash": "sha256-U554KNpjOWLb5Y6+JPj45FM9Cegb+Dh8dql2qs2Vu48=",
+        "lastModified": 1663031784,
+        "narHash": "sha256-fCJYz1STMiZj4kKJS3Bey1v5Hv1ax9LbBxVs655k3MM=",
         "owner": "the-argus",
         "repo": "audio-plugins-nix",
-        "rev": "6582b363ba6eabcb308c3c50070531b733a5d59e",
+        "rev": "872dfa5b5f2fe2be4f34cdc1cee8b5b6f0038de7",
         "type": "github"
       },
       "original": {
@@ -307,11 +307,11 @@
         "webcord": "webcord"
       },
       "locked": {
-        "lastModified": 1663007718,
-        "narHash": "sha256-we22lHls9ChvA8HH5tA/tgZkjl95TPAdBRdZt2vMzzs=",
+        "lastModified": 1663031976,
+        "narHash": "sha256-LFjb/IYVwqpO26vIICH20GFnJg87JTLT8xxPuk6O3Fg=",
         "owner": "the-argus",
         "repo": "nixsys",
-        "rev": "51eb874e580e8750f21e26bf339e4af835fb4986",
+        "rev": "58849818beeab4c06c3a3dbfcff299a4df63e8f1",
         "type": "github"
       },
       "original": {
@@ -490,16 +490,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1662694163,
-        "narHash": "sha256-NscJUo6fx7wGVW/L/UKSxbXhWJyZ2DF2xbdkbRjWf4Q=",
+        "lastModified": 1663031959,
+        "narHash": "sha256-ctuDal2pcJMsJLSpE6k1BQsgGkCEynbIGB6t/nRUpHg=",
         "owner": "the-argus",
         "repo": "spicetify-nix",
-        "rev": "262e442cf895fe4948c985124f7bdda4e14cf3cb",
+        "rev": "da672e2ab339194ba9c087cdda9f3f9195559a0a",
         "type": "github"
       },
       "original": {
         "owner": "the-argus",
-        "ref": "dev",
         "repo": "spicetify-nix",
         "type": "github"
       }
