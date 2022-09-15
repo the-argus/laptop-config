@@ -12,7 +12,6 @@
       url = "github:the-argus/nixsys";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
-      inputs.gtk-nix.url = "github:the-argus/gtk-nix";
     };
   };
 
