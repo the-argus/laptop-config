@@ -16,7 +16,9 @@
     "reaper"
     "slack"
     "discord"
+    "ue4"
   ];
+  allowBroken = true;
   plymouth = let
     name = "rings";
   in {
