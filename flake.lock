@@ -493,6 +493,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
+        "nixpkgs-remotebuild": "nixpkgs-remotebuild",
         "nixpkgs-unstable": [
           "nixpkgs-unstable"
         ],
@@ -502,11 +503,11 @@
         "webcord": "webcord"
       },
       "locked": {
-        "lastModified": 1663378496,
-        "narHash": "sha256-/zeaZyGgqQP6nbhB/HBuL6Ixxk6zE+fD/F+7KXSxB74=",
+        "lastModified": 1663421170,
+        "narHash": "sha256-Bu8ac0KYCEFtGFVxL9QI2JH1yDeRAegY4NBrvnbRFDE=",
         "owner": "the-argus",
         "repo": "nixsys",
-        "rev": "48f280b46418c09181924310b6c73fb784c552c5",
+        "rev": "782e1fe5e8b7b25a56dd3f449b820d529629adac",
         "type": "github"
       },
       "original": {
@@ -530,13 +531,29 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-remotebuild": {
+      "locked": {
+        "lastModified": 1663421035,
+        "narHash": "sha256-ch973bAc3S/Cu5W9Q15ozSGKTbsiovfSGU6FE0RzjYg=",
+        "owner": "the-argus",
+        "repo": "nixpkgs",
+        "rev": "ba992ce3cac1ac313076a3908fdd2e75d86ef872",
+        "type": "github"
+      },
+      "original": {
+        "owner": "the-argus",
+        "ref": "fix/ue4-build",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1663178737,
-        "narHash": "sha256-ayOtdyoNx6BqJtTYVzdQCDz/YWb67TY/CMGacFCgNQo=",
+        "lastModified": 1663268520,
+        "narHash": "sha256-Jf6wkoMOhWUdx9d9UarWHExvOUDzVa98OsPYvbNLVYo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1158501e7c7cba26d922723cf9f70099995eb755",
+        "rev": "823e2c9b0a0ec8b61b6583f48338072f137b6889",
         "type": "github"
       },
       "original": {
