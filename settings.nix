@@ -31,6 +31,10 @@
   additionalUserPackages = [
     #"steam"
     "libreoffice-fresh"
+    {
+      set = "ue4-patched";
+      package = "ue4";
+    }
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware];
   usesWireless = true; # install and autostart nm-applet
@@ -67,4 +71,19 @@
       # "-fcx-fortran-rules"
     ];
   };
+  nix = {
+    distributedBuilds = true;
+    buildMachines = [
+      {
+        hostName = "rpmc.duckdns.org";
+        systems = ["aarch64-linux"];
+        sshUser = "servers";
+        sshKey = "/home/argus/.ssh/id_ed25519";
+        supportedFeatures = ["big-parallel"];
+        maxJobs = 4;
+        speedFactor = 2;
+      }
+    ];
+  };
+  additionalSystemPackages = [];
 }
