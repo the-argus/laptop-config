@@ -49,9 +49,13 @@
       "linuxPackages_xanmod_latest"
       # "qtile"
       # "neovim"
-      "kitty"
       "grub"
       "plymouth"
+      # this causes system breakages
+      # "zsh"
+      # none of these work (ie they dont apply, these packages wont build
+      # from source like this
+      "kitty" "starship"
     ];
   };
 
