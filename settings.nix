@@ -20,7 +20,7 @@
   ];
   allowBroken = true;
   plymouth = let
-    name = "rings";
+    name = "seal";
   in {
     themeName = name;
     themePath = "pack_4/${name}";
@@ -28,13 +28,40 @@
   extraExtraSpecialArgs = {inherit (audio-plugins) mpkgs;};
   extraSpecialArgs = {};
   additionalModules = [audio-plugins.homeManagerModule];
+  packageSelections = {
+    # packages to override with their unstable versions
+    # all of these are things that i might want to move
+    # to remotebuild at some point (so theyre FOSS)
+    unstable = [
+      "alejandra"
+      "wl-color-picker"
+      "heroic"
+      "solo2-cli"
+      "ani-cli"
+      "ungoogled-chromium"
+      "firefox"
+      "OVMFFull"
+    ];
+    # packages to build remotely
+    remotebuild = [
+      "linuxPackages_latest"
+      "linuxPackages_zen"
+      "linuxPackages_xanmod_latest"
+      # "qtile"
+      # "neovim"
+      "kitty"
+      "grub"
+      "plymouth"
+    ];
+  };
+
   additionalUserPackages = [
     #"steam"
     "libreoffice-fresh"
-    {
-      set = "ue4-patched";
-      package = "ue4";
-    }
+    # {
+    #   set = "unstable";
+    #   package = "ue4";
+    # }
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware];
   usesWireless = true; # install and autostart nm-applet
@@ -86,4 +113,12 @@
     ];
   };
   additionalSystemPackages = [];
+  remotebuildOverrides = {
+    optimization = {
+      useMusl = true;
+      useFlags = true;
+      useClang = true;
+    };
+  };
+  unstableOverrides = {};
 }
