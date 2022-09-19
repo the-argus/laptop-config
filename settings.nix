@@ -48,49 +48,49 @@
         set1 = "xorg";
         set2 = xorgPkg;
       };
-    in
-      [
-        "linuxPackages_latest"
-        "linuxPackages_zen"
-        "linuxPackages_xanmod_latest"
-        # "qtile"
-        # "neovim"
-        "grub"
-        "plymouth"
-        # this causes system breakages
-        # "zsh"
-        # none of these work (ie they dont apply, these packages wont build
-        # from source like this
-        # "kitty" "starship"
-        # build xorg from source
-      ]
-      ++ map mkXorg [
-        "xrandr"
-        "xrdb"
-        "setxkbmap"
-        "iceauth"
-        "xlsclients"
-        "xset"
-        "xsetroot"
-        "xinput"
-        "xprop"
-        "xauth"
-        "xterm"
-        "xdg-utils"
-      ]
-      ++ [
-        "xorg"
-        {
-          set1 = "xorg";
-          set2 = "xorgserver";
-          set3 = "out";
-        }
-        {
-          set1 = "xorg";
-          set2 = "xf86inputevdev";
-          set3 = "out";
-        }
-      ];
+    in [
+      "linuxPackages_latest"
+      "linuxPackages_zen"
+      "linuxPackages_xanmod_latest"
+      # "qtile"
+      # "neovim"
+      "grub"
+      "plymouth"
+      # this causes system breakages
+      "zsh"
+      # none of these work (ie they dont apply, these packages wont build
+      # from source like this
+      "kitty"
+      "starship"
+      # build xorg from source
+      # "xorg"
+      # ]
+      # ++ map mkXorg [
+      #   "xrandr"
+      #   "xrdb"
+      #   "setxkbmap"
+      #   "iceauth"
+      #   "xlsclients"
+      #   "xset"
+      #   "xsetroot"
+      #   "xinput"
+      #   "xprop"
+      #   "xauth"
+      #   "xterm"
+      #   "xdg-utils"
+      # ]
+      # ++ [
+      #   {
+      #     set1 = "xorg";
+      #     set2 = "xorgserver";
+      #     set3 = "out";
+      #   }
+      #   {
+      #     set1 = "xorg";
+      #     set2 = "xf86inputevdev";
+      #     set3 = "out";
+      #   }
+    ];
   };
 
   additionalUserPackages = [
