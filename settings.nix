@@ -43,20 +43,54 @@
       "OVMFFull"
     ];
     # packages to build remotely
-    remotebuild = [
-      "linuxPackages_latest"
-      "linuxPackages_zen"
-      "linuxPackages_xanmod_latest"
-      # "qtile"
-      # "neovim"
-      "grub"
-      "plymouth"
-      # this causes system breakages
-      # "zsh"
-      # none of these work (ie they dont apply, these packages wont build
-      # from source like this
-      "kitty" "starship"
-    ];
+    remotebuild = let
+      mkXorg = xorgPkg: {
+        set1 = "xorg";
+        set2 = xorgPkg;
+      };
+    in
+      [
+        "linuxPackages_latest"
+        "linuxPackages_zen"
+        "linuxPackages_xanmod_latest"
+        # "qtile"
+        # "neovim"
+        "grub"
+        "plymouth"
+        # this causes system breakages
+        # "zsh"
+        # none of these work (ie they dont apply, these packages wont build
+        # from source like this
+        # "kitty" "starship"
+        # build xorg from source
+      ]
+      ++ map mkXorg [
+        "xrandr"
+        "xrdb"
+        "setxkbmap"
+        "iceauth"
+        "xlsclients"
+        "xset"
+        "xsetroot"
+        "xinput"
+        "xprop"
+        "xauth"
+        "xterm"
+        "xdg-utils"
+      ]
+      ++ [
+        "xorg"
+        {
+          set1 = "xorg";
+          set2 = "xorgserver";
+          set3 = "out";
+        }
+        {
+          set1 = "xorg";
+          set2 = "xf86inputevdev";
+          set3 = "out";
+        }
+      ];
   };
 
   additionalUserPackages = [
