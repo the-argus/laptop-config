@@ -57,10 +57,10 @@
       "grub"
       "plymouth"
       # this causes system breakages
-      "zsh"
+      # "zsh"
       # none of these work (ie they dont apply, these packages wont build
       # from source like this
-      "kitty"
+      # "kitty"
       "starship"
       # build xorg from source
       # "xorg"
