@@ -41,6 +41,7 @@
       "ungoogled-chromium"
       "firefox"
       "OVMFFull"
+      "kitty"
     ];
     # packages to build remotely
     remotebuild = let
@@ -57,7 +58,7 @@
       "grub"
       "plymouth"
       # this causes system breakages
-      # "zsh"
+      "zsh" "zplug"
       # none of these work (ie they dont apply, these packages wont build
       # from source like this
       # "kitty"
