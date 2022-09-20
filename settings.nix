@@ -5,7 +5,7 @@
   nixpkgs-unstable,
   master-config,
   ...
-}: {
+}: rec {
   # theme = "nordicWithGtkNix";
   system = "x86_64-linux";
   username = "argus";
@@ -29,25 +29,33 @@
   extraExtraSpecialArgs = {inherit (audio-plugins) mpkgs;};
   extraSpecialArgs = {};
   additionalModules = [audio-plugins.homeManagerModule];
-  additionalOverlays = [
-    (self: super: let
-      baseKernel = super.linuxKernel.kernels.linux_xanmod_latest;
-      override = nixpkgs.lib.attrsets.recursiveUpdate;
-    in {
-      linuxKernel = override super.linuxKernel {
-        kernels = {
-          linux_xanmod_latest = super.linuxKernel.manualConfig {
-            inherit (super) stdenv;
-            inherit (baseKernel) src;
-            inherit (super) lib;
-            version = "${baseKernel.version}-custom";
-            configfile = this + /hardware/kernelconfig;
-            allowImportFromDerivation = true;
-          };
-        };
-      };
-    })
-  ];
+  additionalOverlays = [];
+  # additionalOverlays = [
+  #   (self: super: let
+  #     src = super.fetchgit {
+  #       url = "https://github.com/xanmod/linux";
+  #       rev = "5cf14a5e02b970855983958aa992e19b15c01840";
+  #       sha256 = "0nd1callf7hlixdifi3dyfs5jpnrypc1lnxk2bqbyk768mlpfkjb";
+  #     };
+  #     version = "5.19.9";
+  #     override = nixpkgs.lib.attrsets.recursiveUpdate;
+  #   in {
+  #     linuxKernel = override super.linuxKernel {
+  #       kernels = {
+  #         linux_xanmod_latest = super.linuxKernel.manualConfig {
+  #           stdenv = super.gccStdenv;
+  #           inherit src version;
+  #           modDirVersion = "${version}-xanmod1-${super.lib.strings.toUpper hostname}";
+  #           inherit (super) lib;
+  #           configfile = super.callPackage ./hardware/kernelconfig.nix {
+  #             inherit hostname;
+  #           };
+  #           allowImportFromDerivation = true;
+  #         };
+  #       };
+  #     };
+  #   })
+  # ];
   packageSelections = {
     # packages to override with their unstable versions
     # all of these are things that i might want to move
