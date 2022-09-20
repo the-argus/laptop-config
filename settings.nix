@@ -1,4 +1,5 @@
 {
+  this,
   audio-plugins,
   nixpkgs,
   nixpkgs-unstable,
@@ -28,6 +29,25 @@
   extraExtraSpecialArgs = {inherit (audio-plugins) mpkgs;};
   extraSpecialArgs = {};
   additionalModules = [audio-plugins.homeManagerModule];
+  additionalOverlays = [
+    (self: super: let
+      baseKernel = super.linuxKernel.kernels.linux_xanmod_latest;
+      override = nixpkgs.lib.attrsets.recursiveUpdate;
+    in {
+      linuxKernel = override super.linuxKernel {
+        kernels = {
+          linux_xanmod_latest = super.linuxKernel.manualConfig {
+            inherit (super) stdenv;
+            inherit (baseKernel) src;
+            inherit (super) lib;
+            version = "${baseKernel.version}-custom";
+            configfile = this + /hardware/kernelconfig;
+            allowImportFromDerivation = true;
+          };
+        };
+      };
+    })
+  ];
   packageSelections = {
     # packages to override with their unstable versions
     # all of these are things that i might want to move

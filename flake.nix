@@ -30,6 +30,7 @@
     genSystems = nixpkgs.lib.genAttrs supportedSystems;
     settings = import ./settings.nix {
       inherit audio-plugins nixpkgs nixpkgs-unstable master-config;
+      this = self;
     };
   in {
     nixosConfigurations = master-config.createNixosConfiguration settings;

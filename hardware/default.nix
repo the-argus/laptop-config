@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   useFlags,
   plymouth,
   hostname,
@@ -13,6 +14,7 @@
 
   # dual booting with windows boot loader mounted on /efi
   boot = {
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
     kernelParams = ["intel_iommu=on" "quiet" "systemd.show_status=0" "loglevel=4" "rd.systemd.show_status=auto" "rd.udev.log-priority=3"];
     loader = {
       efi = {
@@ -84,6 +86,7 @@
 
   # display -------------------------------------------------------------------
   hardware.opengl = {
+    driSupport32Bit = false;
     extraPackages = with pkgs; [
       intel-media-driver
     ];
