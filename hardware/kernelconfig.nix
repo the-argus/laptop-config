@@ -662,7 +662,7 @@ in
     CONFIG_GENERIC_ENTRY=y
     # CONFIG_KPROBES is not set
     CONFIG_JUMP_LABEL=y
-    # CONFIG_STATIC_KEYS_SELFTEST ns not set
+    # CONFIG_STATIC_KEYS_SELFTEST is not set
     # CONFIG_STATIC_CALL_SELFTEST is not set
     CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS=y
     CONFIG_ARCH_USE_BUILTIN_BSWAP=y
@@ -2811,7 +2811,8 @@ in
     # CONFIG_SND_OSSEMUL is not set
     CONFIG_SND_PCM_TIMER=y
     CONFIG_SND_HRTIMER=y
-    # CONFIG_SND_DYNAMIC_MINORS is not set
+    CONFIG_SND_DYNAMIC_MINORS=y
+    CONFIG_SND_MAX_CARDS=4
     CONFIG_SND_SUPPORT_OLD_API=y
     CONFIG_SND_PROC_FS=y
     CONFIG_SND_VERBOSE_PROCFS=y
@@ -2819,16 +2820,18 @@ in
     # CONFIG_SND_DEBUG is not set
     CONFIG_SND_VMASTER=y
     CONFIG_SND_DMA_SGBUF=y
+    CONFIG_SND_CTL_LED=y
     CONFIG_SND_SEQUENCER=y
     CONFIG_SND_SEQ_DUMMY=y
     CONFIG_SND_SEQ_HRTIMER_DEFAULT=y
     CONFIG_SND_SEQ_MIDI_EVENT=y
     CONFIG_SND_SEQ_MIDI=y
+    CONFIG_SND_SEQ_VIRMIDI=y
     CONFIG_SND_DRIVERS=y
     # CONFIG_SND_PCSP is not set
     # CONFIG_SND_DUMMY is not set
     # CONFIG_SND_ALOOP is not set
-    # CONFIG_SND_VIRMIDI is not set
+    CONFIG_SND_VIRMIDI=y
     # CONFIG_SND_MTPAV is not set
     # CONFIG_SND_SERIAL_U16550 is not set
     # CONFIG_SND_MPU401 is not set
@@ -2903,16 +2906,17 @@ in
     # HD-Audio
     #
     CONFIG_SND_HDA=y
+    CONFIG_SND_HDA_GENERIC_LEDS=y
     CONFIG_SND_HDA_INTEL=y
     CONFIG_SND_HDA_HWDEP=y
     # CONFIG_SND_HDA_RECONFIG is not set
     # CONFIG_SND_HDA_INPUT_BEEP is not set
     # CONFIG_SND_HDA_PATCH_LOADER is not set
-    # CONFIG_SND_HDA_CODEC_REALTEK is not set
+    CONFIG_SND_HDA_CODEC_REALTEK=y
     # CONFIG_SND_HDA_CODEC_ANALOG is not set
     # CONFIG_SND_HDA_CODEC_SIGMATEL is not set
     # CONFIG_SND_HDA_CODEC_VIA is not set
-    # CONFIG_SND_HDA_CODEC_HDMI is not set
+    CONFIG_SND_HDA_CODEC_HDMI=y
     # CONFIG_SND_HDA_CODEC_CIRRUS is not set
     # CONFIG_SND_HDA_CODEC_CS8409 is not set
     # CONFIG_SND_HDA_CODEC_CONEXANT is not set
@@ -2920,7 +2924,7 @@ in
     # CONFIG_SND_HDA_CODEC_CA0132 is not set
     # CONFIG_SND_HDA_CODEC_CMEDIA is not set
     # CONFIG_SND_HDA_CODEC_SI3054 is not set
-    # CONFIG_SND_HDA_GENERIC is not set
+    CONFIG_SND_HDA_GENERIC=y
     CONFIG_SND_HDA_POWER_SAVE_DEFAULT=0
     # CONFIG_SND_HDA_INTEL_HDMI_SILENT_STREAM is not set
     # end of HD-Audio
@@ -2949,7 +2953,7 @@ in
     # CONFIG_SND_PCMCIA is not set
     # CONFIG_SND_SOC is not set
     # CONFIG_SND_X86 is not set
-    # CONFIG_SND_VIRTIO is not set
+    CONFIG_SND_VIRTIO=y
 
     #
     # HID support
@@ -3010,8 +3014,8 @@ in
     # CONFIG_HID_LED is not set
     # CONFIG_HID_LENOVO is not set
     # CONFIG_HID_LETSKETCH is not set
-    CONFIG_HID_LOGITECH=y
-    CONFIG_HID_LOGITECH_HIDPP=y
+    CONFIG_HID_LOGITECH=m
+    CONFIG_HID_LOGITECH_HIDPP=m
     # CONFIG_LOGITECH_FF is not set
     # CONFIG_LOGIRUMBLEPAD2_FF is not set
     # CONFIG_LOGIG940_FF is not set
@@ -3021,7 +3025,7 @@ in
     # CONFIG_HID_MAYFLASH is not set
     # CONFIG_HID_MEGAWORLD_FF is not set
     # CONFIG_HID_REDRAGON is not set
-    CONFIG_HID_MICROSOFT=y
+    CONFIG_HID_MICROSOFT=m
     # CONFIG_HID_MONTEREY is not set
     # CONFIG_HID_MULTITOUCH is not set
     # CONFIG_HID_NINTENDO is not set
@@ -3033,7 +3037,7 @@ in
     # CONFIG_HID_PETALYNX is not set
     # CONFIG_HID_PICOLCD is not set
     # CONFIG_HID_PLANTRONICS is not set
-    # CONFIG_HID_RAZER is not set
+    CONFIG_HID_RAZER=m
     # CONFIG_HID_PRIMAX is not set
     # CONFIG_HID_RETRODE is not set
     # CONFIG_HID_ROCCAT is not set
@@ -3123,7 +3127,7 @@ in
     # CONFIG_USB_XHCI_DBGCAP is not set
     CONFIG_USB_XHCI_PCI=y
     # CONFIG_USB_XHCI_PCI_RENESAS is not set
-    # CONFIG_USB_XHCI_PLATFORM is not set
+    CONFIG_USB_XHCI_PLATFORM=m
     CONFIG_USB_EHCI_HCD=y
     # CONFIG_USB_EHCI_ROOT_HUB_TT is not set
     CONFIG_USB_EHCI_TT_NEWSCHED=y
@@ -3133,9 +3137,7 @@ in
     # CONFIG_USB_OXU210HP_HCD is not set
     # CONFIG_USB_ISP116X_HCD is not set
     # CONFIG_USB_FOTG210_HCD is not set
-    CONFIG_USB_OHCI_HCD=y
-    CONFIG_USB_OHCI_HCD_PCI=y
-    # CONFIG_USB_OHCI_HCD_PLATFORM is not set
+    # CONFIG_USB_OHCI_HCD is not set
     CONFIG_USB_UHCI_HCD=y
     # CONFIG_USB_SL811_HCD is not set
     # CONFIG_USB_R8A66597_HCD is not set
@@ -3179,7 +3181,13 @@ in
     # CONFIG_USB_MDC800 is not set
     # CONFIG_USB_MICROTEK is not set
     # CONFIG_USBIP_CORE is not set
-    # CONFIG_USB_CDNS_SUPPORT is not set
+    CONFIG_USB_CDNS_SUPPORT=m
+    CONFIG_USB_CDNS_HOST=y
+    CONFIG_USB_CDNS3=m
+    CONFIG_USB_CDNS3_HOST=y
+    CONFIG_USB_CDNS3_PCI_WRAP=m
+    CONFIG_USB_CDNSP_PCI=m
+    CONFIG_USB_CDNSP_HOST=y
     # CONFIG_USB_MUSB_HDRC is not set
     # CONFIG_USB_DWC3 is not set
     # CONFIG_USB_DWC2 is not set
@@ -3281,8 +3289,30 @@ in
     # end of USB Physical Layer drivers
 
     # CONFIG_USB_GADGET is not set
-    # CONFIG_TYPEC is not set
-    # CONFIG_USB_ROLE_SWITCH is not set
+    CONFIG_TYPEC=y
+    # CONFIG_TYPEC_TCPM is not set
+    # CONFIG_TYPEC_UCSI is not set
+    # CONFIG_TYPEC_TPS6598X is not set
+    # CONFIG_TYPEC_RT1719 is not set
+    # CONFIG_TYPEC_HD3SS3220 is not set
+    # CONFIG_TYPEC_STUSB160X is not set
+    # CONFIG_TYPEC_WUSB3801 is not set
+
+    #
+    # USB Type-C Multiplexer/DeMultiplexer Switch support
+    #
+    # CONFIG_TYPEC_MUX_FSA4480 is not set
+    # CONFIG_TYPEC_MUX_PI3USB30532 is not set
+    # end of USB Type-C Multiplexer/DeMultiplexer Switch support
+
+    #
+    # USB Type-C Alternate Mode drivers
+    #
+    # CONFIG_TYPEC_DP_ALTMODE is not set
+    # end of USB Type-C Alternate Mode drivers
+
+    CONFIG_USB_ROLE_SWITCH=m
+    # CONFIG_USB_ROLES_INTEL_XHCI is not set
     # CONFIG_MMC is not set
     # CONFIG_SCSI_UFSHCD is not set
     # CONFIG_MEMSTICK is not set
@@ -3350,7 +3380,7 @@ in
     # CONFIG_LEDS_TRIGGER_PANIC is not set
     # CONFIG_LEDS_TRIGGER_NETDEV is not set
     # CONFIG_LEDS_TRIGGER_PATTERN is not set
-    CONFIG_LEDS_TRIGGER_AUDIO=m
+    CONFIG_LEDS_TRIGGER_AUDIO=y
     # CONFIG_LEDS_TRIGGER_TTY is not set
 
     #
@@ -3775,10 +3805,10 @@ in
     CONFIG_DCACHE_WORD_ACCESS=y
     # CONFIG_VALIDATE_FS_PARSER is not set
     CONFIG_FS_IOMAP=y
-    # CONFIG_EXT2_FS is not set
+    CONFIG_EXT2_FS=m
+    # CONFIG_EXT2_FS_XATTR is not set
     # CONFIG_EXT3_FS is not set
     CONFIG_EXT4_FS=y
-    CONFIG_EXT4_USE_FOR_EXT2=y
     # CONFIG_EXT4_FS_POSIX_ACL is not set
     # CONFIG_EXT4_FS_SECURITY is not set
     # CONFIG_EXT4_DEBUG is not set
@@ -3812,7 +3842,7 @@ in
     # CONFIG_FS_ENCRYPTION is not set
     # CONFIG_FS_VERITY is not set
     CONFIG_FSNOTIFY=y
-    # CONFIG_DNOTIFY is not set
+    CONFIG_DNOTIFY=y
     CONFIG_INOTIFY_USER=y
     # CONFIG_FANOTIFY is not set
     # CONFIG_QUOTA is not set
@@ -3826,7 +3856,7 @@ in
     #
     # Caches
     #
-    CONFIG_NETFS_SUPPORT=y
+    CONFIG_NETFS_SUPPORT=m
     # CONFIG_NETFS_STATS is not set
     # CONFIG_FSCACHE is not set
     # end of Caches
@@ -3834,10 +3864,10 @@ in
     #
     # CD-ROM/DVD Filesystems
     #
-    CONFIG_ISO9660_FS=y
+    CONFIG_ISO9660_FS=m
     CONFIG_JOLIET=y
     CONFIG_ZISOFS=y
-    # CONFIG_UDF_FS is not set
+    CONFIG_UDF_FS=m
     # end of CD-ROM/DVD Filesystems
 
     #
@@ -3885,29 +3915,40 @@ in
 
     # CONFIG_MISC_FILESYSTEMS is not set
     CONFIG_NETWORK_FILESYSTEMS=y
-    CONFIG_NFS_FS=y
-    CONFIG_NFS_V2=y
-    CONFIG_NFS_V3=y
+    CONFIG_NFS_FS=m
+    CONFIG_NFS_V2=m
+    CONFIG_NFS_V3=m
     CONFIG_NFS_V3_ACL=y
-    CONFIG_NFS_V4=y
+    CONFIG_NFS_V4=m
     # CONFIG_NFS_SWAP is not set
     # CONFIG_NFS_V4_1 is not set
     # CONFIG_NFS_USE_LEGACY_DNS is not set
     CONFIG_NFS_USE_KERNEL_DNS=y
     CONFIG_NFS_DISABLE_UDP_SUPPORT=y
     # CONFIG_NFSD is not set
-    CONFIG_GRACE_PERIOD=y
-    CONFIG_LOCKD=y
+    CONFIG_GRACE_PERIOD=m
+    CONFIG_LOCKD=m
     CONFIG_LOCKD_V4=y
-    CONFIG_NFS_ACL_SUPPORT=y
+    CONFIG_NFS_ACL_SUPPORT=m
     CONFIG_NFS_COMMON=y
-    CONFIG_SUNRPC=y
-    CONFIG_SUNRPC_GSS=y
+    CONFIG_SUNRPC=m
+    CONFIG_SUNRPC_GSS=m
     # CONFIG_SUNRPC_DEBUG is not set
-    CONFIG_CEPH_FS=y
+    CONFIG_CEPH_FS=m
     CONFIG_CEPH_FS_POSIX_ACL=y
-    # CONFIG_CIFS is not set
+    CONFIG_CIFS=m
+    CONFIG_CIFS_STATS2=y
+    CONFIG_CIFS_ALLOW_INSECURE_LEGACY=y
+    CONFIG_CIFS_UPCALL=y
+    CONFIG_CIFS_XATTR=y
+    # CONFIG_CIFS_POSIX is not set
+    CONFIG_CIFS_DEBUG=y
+    # CONFIG_CIFS_DEBUG2 is not set
+    # CONFIG_CIFS_DEBUG_DUMP_KEYS is not set
+    CONFIG_CIFS_DFS_UPCALL=y
+    CONFIG_CIFS_SWN_UPCALL=y
     # CONFIG_SMB_SERVER is not set
+    CONFIG_SMBFS_COMMON=m
     # CONFIG_CODA_FS is not set
     # CONFIG_AFS_FS is not set
     CONFIG_NLS=y
@@ -4108,7 +4149,7 @@ in
     # CONFIG_CRYPTO_POLY1305 is not set
     # CONFIG_CRYPTO_POLY1305_X86_64 is not set
     # CONFIG_CRYPTO_MD4 is not set
-    # CONFIG_CRYPTO_MD5 is not set
+    CONFIG_CRYPTO_MD5=m
     # CONFIG_CRYPTO_MICHAEL_MIC is not set
     # CONFIG_CRYPTO_RMD160 is not set
     # CONFIG_CRYPTO_SHA1 is not set
@@ -4261,7 +4302,7 @@ in
     CONFIG_CRC16=y
     # CONFIG_CRC_T10DIF is not set
     # CONFIG_CRC64_ROCKSOFT is not set
-    # CONFIG_CRC_ITU_T is not set
+    CONFIG_CRC_ITU_T=m
     CONFIG_CRC32=y
     # CONFIG_CRC32_SELFTEST is not set
     CONFIG_CRC32_SLICEBY8=y
@@ -4330,9 +4371,20 @@ in
     CONFIG_GENERIC_GETTIMEOFDAY=y
     CONFIG_GENERIC_VDSO_TIME_NS=y
     CONFIG_FONT_SUPPORT=y
-    # CONFIG_FONTS is not set
+    CONFIG_FONTS=y
     CONFIG_FONT_8x8=y
     CONFIG_FONT_8x16=y
+    # CONFIG_FONT_6x11 is not set
+    # CONFIG_FONT_7x14 is not set
+    # CONFIG_FONT_PEARL_8x8 is not set
+    # CONFIG_FONT_ACORN_8x8 is not set
+    # CONFIG_FONT_MINI_4x6 is not set
+    # CONFIG_FONT_6x10 is not set
+    # CONFIG_FONT_10x18 is not set
+    # CONFIG_FONT_SUN8x16 is not set
+    # CONFIG_FONT_SUN12x22 is not set
+    CONFIG_FONT_TER16x32=y
+    # CONFIG_FONT_6x8 is not set
     CONFIG_SG_POOL=y
     CONFIG_ARCH_HAS_PMEM_API=y
     CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE=y
@@ -4478,7 +4530,7 @@ in
     CONFIG_HAVE_BUILDTIME_MCOUNT_SORT=y
     CONFIG_TRACING_SUPPORT=y
     # CONFIG_FTRACE is not set
-    CONFIG_PROVIDE_OHCI1394_DMA_INIT=y
+    # CONFIG_PROVIDE_OHCI1394_DMA_INIT is not set
     # CONFIG_SAMPLES is not set
     CONFIG_HAVE_SAMPLE_FTRACE_DIRECT=y
     CONFIG_HAVE_SAMPLE_FTRACE_DIRECT_MULTI=y
@@ -4489,9 +4541,10 @@ in
     #
     # x86 Debugging
     #
-    # CONFIG_X86_VERBOSE_BOOTUP is not set
+    CONFIG_EARLY_PRINTK_USB=y
+    CONFIG_X86_VERBOSE_BOOTUP=y
     CONFIG_EARLY_PRINTK=y
-    # CONFIG_EARLY_PRINTK_DBGP is not set
+    CONFIG_EARLY_PRINTK_DBGP=y
     # CONFIG_EARLY_PRINTK_USB_XDBC is not set
     # CONFIG_EFI_PGT_DUMP is not set
     CONFIG_HAVE_MMIOTRACE_SUPPORT=y
