@@ -135,6 +135,7 @@
   usesBluetooth = true; # install and autostart blueman applet
   usesMouse = false; # enables xmousepasteblock for middle click
   hasBattery = true; # battery widget in tiling WMs
+  usesEthernet = false;
   optimization = {
     arch = "tigerlake";
     useMusl = false; # use musl instead of glibc
