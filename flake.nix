@@ -12,7 +12,7 @@
       url = "github:the-argus/nixsys";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
-      inputs.nixpkgs-remotebuild.url = "github:the-argus/nixpkgs?ref=fix/ue4-build";
+      inputs.gtk-nix.url = "github:the-argus/gtk-nix";
     };
   };
 

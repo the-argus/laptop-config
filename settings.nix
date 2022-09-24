@@ -90,7 +90,7 @@
       # none of these work (ie they dont apply, these packages wont build
       # from source like this
       # "kitty"
-      "starship"
+      # "starship"
       # build xorg from source
       # "xorg"
       # ]
@@ -144,8 +144,8 @@
     useNative = false; # native march
     # what optimizations to use (check https://github.com/fortuneteller2k/nixpkgs-f2k/blob/ca75dc2c9d41590ca29555cddfc86cf950432d5e/flake.nix#L237-L289)
     USE = [
-      # "-O3"
-      "-O2"
+      "-O3"
+      # "-O2"
       "-pipe"
       "-ffloat-store"
       "-fexcess-precision=fast"
