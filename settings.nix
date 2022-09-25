@@ -71,6 +71,15 @@
       "OVMFFull"
       "kitty"
     ];
+    localbuild = [
+      # "xorg"
+      "gnome-shell"
+      "gdm"
+      "qtile"
+      "linuxPackages_latest"
+      "linuxPackages_zen"
+      "linuxPackages_xanmod_latest"
+    ];
     # packages to build remotely
     remotebuild = let
       mkXorg = xorgPkg: {
@@ -78,9 +87,6 @@
         set2 = xorgPkg;
       };
     in [
-      "linuxPackages_latest"
-      "linuxPackages_zen"
-      "linuxPackages_xanmod_latest"
       # "qtile"
       # "neovim"
       "grub"
@@ -190,4 +196,5 @@
     };
   };
   unstableOverrides = {};
+  localbuildOverrides = remotebuildOverrides;
 }
