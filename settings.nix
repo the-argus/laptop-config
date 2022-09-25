@@ -5,7 +5,9 @@
   nixpkgs-unstable,
   master-config,
   ...
-}: rec {
+}: let
+  override = nixpkgs.lib.attrsets.recursiveUpdate;
+in rec {
   # theme = "nordicWithGtkNix";
   system = "x86_64-linux";
   username = "argus";
@@ -29,33 +31,32 @@
   extraExtraSpecialArgs = {inherit (audio-plugins) mpkgs;};
   extraSpecialArgs = {};
   additionalModules = [audio-plugins.homeManagerModule];
-  additionalOverlays = [];
-  # additionalOverlays = [
-  #   (self: super: let
-  #     src = super.fetchgit {
-  #       url = "https://github.com/xanmod/linux";
-  #       rev = "5cf14a5e02b970855983958aa992e19b15c01840";
-  #       sha256 = "0nd1callf7hlixdifi3dyfs5jpnrypc1lnxk2bqbyk768mlpfkjb";
-  #     };
-  #     version = "5.19.9";
-  #     override = nixpkgs.lib.attrsets.recursiveUpdate;
-  #   in {
-  #     linuxKernel = override super.linuxKernel {
-  #       kernels = {
-  #         linux_xanmod_latest = super.linuxKernel.manualConfig {
-  #           stdenv = super.gccStdenv;
-  #           inherit src version;
-  #           modDirVersion = "${version}-xanmod1-${super.lib.strings.toUpper hostname}";
-  #           inherit (super) lib;
-  #           configfile = super.callPackage ./hardware/kernelconfig.nix {
-  #             inherit hostname;
-  #           };
-  #           allowImportFromDerivation = true;
-  #         };
-  #       };
-  #     };
-  #   })
-  # ];
+  # additionalOverlays = [];
+  additionalOverlays = [
+    (self: super: let
+      src = super.fetchgit {
+        url = "https://github.com/xanmod/linux";
+        rev = "5cf14a5e02b970855983958aa992e19b15c01840";
+        sha256 = "0nd1callf7hlixdifi3dyfs5jpnrypc1lnxk2bqbyk768mlpfkjb";
+      };
+      version = "5.19.9";
+    in {
+      linuxKernel = override super.linuxKernel {
+        kernels = {
+          linux_xanmod_latest = super.linuxKernel.manualConfig {
+            stdenv = super.gccStdenv;
+            inherit src version;
+            modDirVersion = "${version}-xanmod1-${super.lib.strings.toUpper hostname}";
+            inherit (super) lib;
+            configfile = super.callPackage ./hardware/kernelconfig.nix {
+              inherit hostname;
+            };
+            allowImportFromDerivation = true;
+          };
+        };
+      };
+    })
+  ];
   packageSelections = {
     # packages to override with their unstable versions
     # all of these are things that i might want to move
@@ -69,16 +70,20 @@
       "ungoogled-chromium"
       "firefox"
       "OVMFFull"
-      "kitty"
     ];
     localbuild = [
-      # "xorg"
+      "xorg"
       "gnome-shell"
       "gdm"
       "qtile"
-      "linuxPackages_latest"
-      "linuxPackages_zen"
-      "linuxPackages_xanmod_latest"
+      {
+        set1 = "linuxKernel";
+        set2 = "kernels";
+        set3 = "linux_xanmod_latest";
+      }
+      "zsh"
+      "zplug"
+      "kitty"
     ];
     # packages to build remotely
     remotebuild = let
@@ -89,6 +94,8 @@
     in [
       # "qtile"
       # "neovim"
+      "bash"
+      "dash"
       "grub"
       "plymouth"
       "coreutils-full"
@@ -188,13 +195,20 @@
     ];
   };
   additionalSystemPackages = [];
+  name = "pkgs";
   remotebuildOverrides = {
     optimization = {
       useMusl = true;
       useFlags = true;
       useClang = true;
     };
+    name = "remotebuild";
   };
-  unstableOverrides = {};
-  localbuildOverrides = remotebuildOverrides;
+  unstableOverrides = {
+    name = "unstable";
+  };
+  localbuildOverrides = override remotebuildOverrides {
+    optimization.useMusl = false;
+    name = "localbuild";
+  };
 }

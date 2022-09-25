@@ -40,6 +40,6 @@
     devShell."x86_64-linux" =
       (master-config.finalizeSettings settings).pkgs.mkShell {};
 
-    formatter = genSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = genSystems (system: nixpkgs-unstable.legacyPackages.${system}.alejandra);
   };
 }
