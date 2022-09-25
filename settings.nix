@@ -94,7 +94,7 @@ in rec {
     in [
       # "qtile"
       # "neovim"
-      "bash"
+      # "bash" # cannot be overriden because the stdenv depends on it
       "dash"
       "grub"
       "plymouth"
