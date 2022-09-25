@@ -414,7 +414,10 @@
     "gtk-nix": {
       "inputs": {
         "dream2nix": "dream2nix",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "master-config",
+          "nixpkgs"
+        ],
         "source": "source"
       },
       "locked": {
@@ -504,11 +507,11 @@
         "webcord": "webcord"
       },
       "locked": {
-        "lastModified": 1664072931,
-        "narHash": "sha256-4nYn6JqhYLdsD4uZ5R0Zo8VXgS5MLIAXHrsxapIfNoQ=",
+        "lastModified": 1664074064,
+        "narHash": "sha256-IwTl1PhurYmJHOmcfAERWcR0JhxWu0FMsfJxg2KEqqk=",
         "owner": "the-argus",
         "repo": "nixsys",
-        "rev": "f667284577ffde7bbb9677d9bd519e32db5076ab",
+        "rev": "0d7b1784f78f9ffe7b19ae43c42bfa8dfc117b15",
         "type": "github"
       },
       "original": {
@@ -540,17 +543,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1663850217,
-        "narHash": "sha256-tp9nXo1/IdN/xN9m06ryy0QUAEfoN6K56ObM/1QTAjc=",
+        "lastModified": 1663684946,
+        "narHash": "sha256-2+miCrlBWC3ELfz862mJ4U8qQyfiD+XLzD9p6k/WzCs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ae1dc133ea5f1538d035af41e5ddbc2ebcb67b90",
+        "rev": "0d7222c92f0503d15176281c7182d2782dc1b6da",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixpkgs-remotebuild": {
@@ -587,26 +590,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1663684946,
-        "narHash": "sha256-2+miCrlBWC3ELfz862mJ4U8qQyfiD+XLzD9p6k/WzCs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0d7222c92f0503d15176281c7182d2782dc1b6da",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1663939948,
-        "narHash": "sha256-tZROWStjk7aXbM6XTbspRb9dSk/4lw7EFBOrt2A09Ag=",
+        "lastModified": 1664029467,
+        "narHash": "sha256-ir7JbsLp2mqseCs3qI+Z/pkt+Gh+GfANbYcI5I+Gvnk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7e27b838cd7ac90fed03d0d5a8487848c4b0b6d2",
+        "rev": "893b6b9f6c4ed0c7efdb84bd300a499a2da9fa51",
         "type": "github"
       },
       "original": {
@@ -728,7 +716,7 @@
       "inputs": {
         "audio-plugins": "audio-plugins",
         "master-config": "master-config",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
@@ -823,7 +811,7 @@
     "webcord": {
       "inputs": {
         "dream2nix": "dream2nix_2",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "webcord": "webcord_2"
       },
       "locked": {
