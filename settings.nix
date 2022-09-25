@@ -85,6 +85,7 @@
       # "neovim"
       "grub"
       "plymouth"
+      "coreutils-full"
       # this causes system breakages
       # "zsh" "zplug"
       # none of these work (ie they dont apply, these packages wont build
