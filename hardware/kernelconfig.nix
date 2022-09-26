@@ -1377,8 +1377,7 @@ in
     # CONFIG_EFI_BOOTLOADER_CONTROL is not set
     # CONFIG_EFI_CAPSULE_LOADER is not set
     # CONFIG_EFI_TEST is not set
-    CONFIG_EFI_DEV_PATH_PARSER=y
-    CONFIG_APPLE_PROPERTIES=y
+    # CONFIG_APPLE_PROPERTIES is not set
     # CONFIG_RESET_ATTACK_MITIGATION is not set
     # CONFIG_EFI_RCI2_TABLE is not set
     # CONFIG_EFI_DISABLE_PCI_DMA is not set
@@ -1731,7 +1730,6 @@ in
 
     # CONFIG_VMXNET3 is not set
     # CONFIG_FUJITSU_ES is not set
-    # CONFIG_USB4_NET is not set
     # CONFIG_NET_FAILOVER is not set
     # CONFIG_ISDN is not set
 
@@ -3810,8 +3808,7 @@ in
     # end of Performance monitor support
 
     # CONFIG_RAS is not set
-    CONFIG_USB4=y
-    # CONFIG_USB4_DEBUGFS_WRITE is not set
+    # CONFIG_USB4 is not set
 
     #
     # Android
