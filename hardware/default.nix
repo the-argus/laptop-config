@@ -32,13 +32,16 @@
         enable = true;
       };
     };
-    initrd.verbose = false;
-  };
-
-  boot.plymouth = {
-    enable = true;
-    themePackages = [pkgs.plymouth-themes-package];
-    theme = plymouth.themeName;
+    initrd = {
+      verbose = false;
+      systemd.enable = true;
+      services.swraid.enable = false;
+    };
+    plymouth = {
+      enable = true;
+      themePackages = [pkgs.plymouth-themes-package];
+      theme = plymouth.themeName;
+    };
   };
 
   # makes plymouth wait 5 seconds while playing

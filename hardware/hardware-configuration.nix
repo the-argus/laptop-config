@@ -14,8 +14,22 @@
     ["nixos-test" "benchmark" "big-parallel" "kvm"]
     ++ settings.features;
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "thunderbolt"
+    "nvme"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [
+    "virtio_net"
+    "virtio_pci"
+    "virtio_blk"
+    "virtio_scsi"
+    # "virtio_mmio"
+    # "virtio_balloon"
+    # "virtio_console"
+  ];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
