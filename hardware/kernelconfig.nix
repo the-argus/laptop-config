@@ -1164,7 +1164,6 @@ in
     # CONFIG_BT_HCIBTUSB_BCM is not set
     # CONFIG_BT_HCIBTUSB_MTK is not set
     CONFIG_BT_HCIBTUSB_RTL=y
-    # CONFIG_BT_HCIBTSDIO is not set
     # CONFIG_BT_HCIUART is not set
     CONFIG_BT_HCIBCM203X=y
     # CONFIG_BT_HCIBPA10X is not set
@@ -1175,7 +1174,6 @@ in
     # CONFIG_BT_HCIVHCI is not set
     # CONFIG_BT_MRVL is not set
     # CONFIG_BT_ATH3K is not set
-    # CONFIG_BT_MTKSDIO is not set
     # CONFIG_BT_VIRTIO is not set
     # end of Bluetooth device drivers
 
@@ -1714,7 +1712,6 @@ in
     # CONFIG_WLAN_VENDOR_REALTEK is not set
     # CONFIG_WLAN_VENDOR_RSI is not set
     CONFIG_WLAN_VENDOR_SILABS=y
-    # CONFIG_WFX is not set
     # CONFIG_WLAN_VENDOR_ST is not set
     # CONFIG_WLAN_VENDOR_TI is not set
     # CONFIG_WLAN_VENDOR_ZYDAS is not set
@@ -3360,29 +3357,7 @@ in
 
     CONFIG_USB_ROLE_SWITCH=m
     # CONFIG_USB_ROLES_INTEL_XHCI is not set
-    CONFIG_MMC=m
-    CONFIG_MMC_BLOCK=m
-    CONFIG_MMC_BLOCK_MINORS=8
-    # CONFIG_SDIO_UART is not set
-    # CONFIG_MMC_TEST is not set
-
-    #
-    # MMC/SD/SDIO Host Controller Drivers
-    #
-    # CONFIG_MMC_DEBUG is not set
-    # CONFIG_MMC_SDHCI is not set
-    # CONFIG_MMC_WBSD is not set
-    # CONFIG_MMC_TIFM_SD is not set
-    # CONFIG_MMC_SDRICOH_CS is not set
-    # CONFIG_MMC_CB710 is not set
-    # CONFIG_MMC_VIA_SDMMC is not set
-    # CONFIG_MMC_VUB300 is not set
-    # CONFIG_MMC_USHC is not set
-    # CONFIG_MMC_USDHI6ROL0 is not set
-    # CONFIG_MMC_CQHCI is not set
-    # CONFIG_MMC_HSQ is not set
-    # CONFIG_MMC_TOSHIBA_PCI is not set
-    # CONFIG_MMC_MTK is not set
+    # CONFIG_MMC is not set
     # CONFIG_SCSI_UFSHCD is not set
     # CONFIG_MEMSTICK is not set
     CONFIG_NEW_LEDS=y
