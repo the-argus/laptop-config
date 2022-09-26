@@ -832,7 +832,6 @@ in
     CONFIG_BLK_MQ_PCI=y
     CONFIG_BLK_MQ_VIRTIO=y
     CONFIG_BLK_PM=y
-    CONFIG_BLOCK_HOLDER_DEPRECATED=y
 
     #
     # IO Schedulers
@@ -1629,18 +1628,7 @@ in
     # CONFIG_PATA_ACPI is not set
     # CONFIG_ATA_GENERIC is not set
     # CONFIG_PATA_LEGACY is not set
-    CONFIG_MD=y
-    CONFIG_BLK_DEV_MD=m
-    # CONFIG_MD_LINEAR is not set
-    CONFIG_MD_RAID0=m
-    CONFIG_MD_RAID1=m
-    CONFIG_MD_RAID10=m
-    CONFIG_MD_RAID456=m
-    # CONFIG_MD_MULTIPATH is not set
-    # CONFIG_MD_FAULTY is not set
-    # CONFIG_BCACHE is not set
-    # CONFIG_BLK_DEV_DM is not set
-    # CONFIG_DM_AUDIT is not set
+    # CONFIG_MD is not set
     # CONFIG_TARGET_CORE is not set
     # CONFIG_FUSION is not set
 
@@ -4091,11 +4079,6 @@ in
     # end of Security options
 
     CONFIG_XOR_BLOCKS=y
-    CONFIG_ASYNC_CORE=m
-    CONFIG_ASYNC_MEMCPY=m
-    CONFIG_ASYNC_XOR=m
-    CONFIG_ASYNC_PQ=m
-    CONFIG_ASYNC_RAID6_RECOV=m
     CONFIG_CRYPTO=y
 
     #
