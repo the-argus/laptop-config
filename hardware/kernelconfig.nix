@@ -1565,7 +1565,7 @@ in
     #
     # SATA SFF controllers with BMDMA
     #
-    # CONFIG_ATA_PIIX is not set
+    CONFIG_ATA_PIIX=m
     # CONFIG_SATA_DWC is not set
     # CONFIG_SATA_MV is not set
     CONFIG_SATA_NV=m
@@ -1573,7 +1573,7 @@ in
     # CONFIG_SATA_SIL is not set
     CONFIG_SATA_SIS=m
     # CONFIG_SATA_SVW is not set
-    # CONFIG_SATA_ULI is not set
+    CONFIG_SATA_ULI=m
     CONFIG_SATA_VIA=m
     # CONFIG_SATA_VITESSE is not set
 
@@ -1595,7 +1595,7 @@ in
     # CONFIG_PATA_IT8213 is not set
     # CONFIG_PATA_IT821X is not set
     # CONFIG_PATA_JMICRON is not set
-    # CONFIG_PATA_MARVELL is not set
+    CONFIG_PATA_MARVELL=m
     # CONFIG_PATA_NETCELL is not set
     # CONFIG_PATA_NINJA32 is not set
     # CONFIG_PATA_NS87415 is not set
