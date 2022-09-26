@@ -1571,7 +1571,7 @@ in
     CONFIG_SATA_NV=m
     # CONFIG_SATA_PROMISE is not set
     # CONFIG_SATA_SIL is not set
-    # CONFIG_SATA_SIS is not set
+    CONFIG_SATA_SIS=m
     # CONFIG_SATA_SVW is not set
     # CONFIG_SATA_ULI is not set
     CONFIG_SATA_VIA=m
@@ -1608,7 +1608,7 @@ in
     # CONFIG_PATA_SCH is not set
     # CONFIG_PATA_SERVERWORKS is not set
     # CONFIG_PATA_SIL680 is not set
-    # CONFIG_PATA_SIS is not set
+    CONFIG_PATA_SIS=m
     # CONFIG_PATA_TOSHIBA is not set
     # CONFIG_PATA_TRIFLEX is not set
     # CONFIG_PATA_VIA is not set
