@@ -1574,7 +1574,7 @@ in
     # CONFIG_SATA_SIS is not set
     # CONFIG_SATA_SVW is not set
     # CONFIG_SATA_ULI is not set
-    # CONFIG_SATA_VIA is not set
+    CONFIG_SATA_VIA=m
     # CONFIG_SATA_VITESSE is not set
 
     #
