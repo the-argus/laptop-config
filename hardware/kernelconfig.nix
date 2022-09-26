@@ -51,12 +51,12 @@ in
     CONFIG_HAVE_KERNEL_LZ4=y
     CONFIG_HAVE_KERNEL_ZSTD=y
     CONFIG_HAVE_KERNEL_UNCOMPRESSED=y
-    CONFIG_KERNEL_GZIP=y
+    # CONFIG_KERNEL_GZIP is not set
     # CONFIG_KERNEL_BZIP2 is not set
     # CONFIG_KERNEL_LZMA is not set
     # CONFIG_KERNEL_XZ is not set
     # CONFIG_KERNEL_LZO is not set
-    # CONFIG_KERNEL_LZ4 is not set
+    CONFIG_KERNEL_LZ4=y
     # CONFIG_KERNEL_ZSTD is not set
     # CONFIG_KERNEL_UNCOMPRESSED is not set
     CONFIG_DEFAULT_INIT=""
@@ -64,8 +64,7 @@ in
     CONFIG_SYSVIPC=y
     CONFIG_SYSVIPC_SYSCTL=y
     CONFIG_SYSVIPC_COMPAT=y
-    CONFIG_POSIX_MQUEUE=y
-    CONFIG_POSIX_MQUEUE_SYSCTL=y
+    # CONFIG_POSIX_MQUEUE is not set
     # CONFIG_WATCH_QUEUE is not set
     CONFIG_CROSS_MEMORY_ATTACH=y
     # CONFIG_USELIB is not set
@@ -168,7 +167,7 @@ in
     CONFIG_IKCONFIG_PROC=y
     # CONFIG_IKHEADERS is not set
     CONFIG_LOG_BUF_SHIFT=15
-    CONFIG_LOG_CPU_MAX_BUF_SHIFT=12
+    CONFIG_LOG_CPU_MAX_BUF_SHIFT=15
     CONFIG_PRINTK_SAFE_LOG_BUF_SHIFT=12
     CONFIG_HAVE_UNSTABLE_SCHED_CLOCK=y
 
@@ -186,7 +185,7 @@ in
     CONFIG_ARCH_SUPPORTS_INT128=y
     CONFIG_CGROUPS=y
     # CONFIG_MEMCG is not set
-    # CONFIG_BLK_CGROUP is not set
+    CONFIG_BLK_CGROUP=y
     CONFIG_CGROUP_SCHED=y
     CONFIG_FAIR_GROUP_SCHED=y
     # CONFIG_CFS_BANDWIDTH is not set
@@ -196,10 +195,10 @@ in
     CONFIG_CGROUP_FREEZER=y
     CONFIG_CPUSETS=y
     CONFIG_PROC_PID_CPUSET=y
-    # CONFIG_CGROUP_DEVICE is not set
+    CONFIG_CGROUP_DEVICE=y
     CONFIG_CGROUP_CPUACCT=y
-    # CONFIG_CGROUP_PERF is not set
-    # CONFIG_CGROUP_MISC is not set
+    CONFIG_CGROUP_PERF=y
+    CONFIG_CGROUP_MISC=y
     CONFIG_NAMESPACES=y
     CONFIG_UTS_NS=y
     CONFIG_TIME_NS=y
@@ -298,7 +297,7 @@ in
     CONFIG_X86_64_SMP=y
     CONFIG_ARCH_SUPPORTS_UPROBES=y
     CONFIG_FIX_EARLYCON_MEM=y
-    CONFIG_PGTABLE_LEVELS=5
+    CONFIG_PGTABLE_LEVELS=4
     CONFIG_CC_HAS_SANE_STACKPROTECTOR=y
 
     #
@@ -423,7 +422,7 @@ in
     # CONFIG_MICROCODE_LATE_LOADING is not set
     CONFIG_X86_MSR=y
     CONFIG_X86_CPUID=y
-    CONFIG_X86_5LEVEL=y
+    # CONFIG_X86_5LEVEL is not set
     CONFIG_X86_DIRECT_GBPAGES=y
     # CONFIG_AMD_MEM_ENCRYPT is not set
     # CONFIG_NUMA is not set
@@ -621,7 +620,7 @@ in
     # Binary Emulations
     #
     CONFIG_IA32_EMULATION=y
-    # CONFIG_X86_X32_ABI is not set
+    CONFIG_X86_X32_ABI=y
     CONFIG_COMPAT_32=y
     CONFIG_COMPAT=y
     CONFIG_COMPAT_FOR_U64_ALIGNMENT=y
@@ -794,7 +793,7 @@ in
     CONFIG_MODULES=y
     # CONFIG_MODULE_FORCE_LOAD is not set
     CONFIG_MODULE_UNLOAD=y
-    CONFIG_MODULE_FORCE_UNLOAD=y
+    # CONFIG_MODULE_FORCE_UNLOAD is not set
     # CONFIG_MODULE_UNLOAD_TAINT_TRACKING is not set
     # CONFIG_MODVERSIONS is not set
     # CONFIG_MODULE_SRCVERSION_ALL is not set
@@ -808,12 +807,16 @@ in
     CONFIG_MODULES_TREE_LOOKUP=y
     CONFIG_BLOCK=y
     CONFIG_BLOCK_LEGACY_AUTOLOAD=y
+    CONFIG_BLK_RQ_ALLOC_TIME=y
     CONFIG_BLK_DEV_BSG_COMMON=y
-    CONFIG_BLK_ICQ=y
     # CONFIG_BLK_DEV_BSGLIB is not set
     # CONFIG_BLK_DEV_INTEGRITY is not set
     # CONFIG_BLK_DEV_ZONED is not set
+    # CONFIG_BLK_DEV_THROTTLING is not set
     # CONFIG_BLK_WBT is not set
+    CONFIG_BLK_CGROUP_IOLATENCY=y
+    CONFIG_BLK_CGROUP_IOCOST=y
+    CONFIG_BLK_CGROUP_IOPRIO=y
     # CONFIG_BLK_SED_OPAL is not set
     # CONFIG_BLK_INLINE_ENCRYPTION is not set
 
@@ -835,7 +838,7 @@ in
     #
     CONFIG_MQ_IOSCHED_DEADLINE=m
     CONFIG_MQ_IOSCHED_KYBER=m
-    CONFIG_IOSCHED_BFQ=m
+    # CONFIG_IOSCHED_BFQ is not set
     # end of IO Schedulers
 
     CONFIG_PREEMPT_NOTIFIERS=y
@@ -966,6 +969,7 @@ in
     CONFIG_XFRM_ALGO=y
     CONFIG_XFRM_USER=y
     # CONFIG_XFRM_USER_COMPAT is not set
+    # CONFIG_XFRM_INTERFACE is not set
     # CONFIG_XFRM_SUB_POLICY is not set
     # CONFIG_XFRM_MIGRATE is not set
     # CONFIG_XFRM_STATISTICS is not set
@@ -976,12 +980,15 @@ in
     # CONFIG_IP_PNP is not set
     # CONFIG_NET_IPIP is not set
     # CONFIG_NET_IPGRE_DEMUX is not set
+    CONFIG_NET_IP_TUNNEL=m
     # CONFIG_SYN_COOKIES is not set
     # CONFIG_NET_IPVTI is not set
     # CONFIG_NET_FOU is not set
+    # CONFIG_NET_FOU_IP_TUNNELS is not set
     # CONFIG_INET_AH is not set
     # CONFIG_INET_ESP is not set
     # CONFIG_INET_IPCOMP is not set
+    CONFIG_INET_TUNNEL=m
     # CONFIG_INET_DIAG is not set
     CONFIG_TCP_CONG_ADVANCED=y
     # CONFIG_TCP_CONG_BIC is not set
@@ -1005,7 +1012,24 @@ in
     # CONFIG_DEFAULT_RENO is not set
     CONFIG_DEFAULT_TCP_CONG="bbr2"
     # CONFIG_TCP_MD5SIG is not set
-    # CONFIG_IPV6 is not set
+    CONFIG_IPV6=m
+    # CONFIG_IPV6_ROUTER_PREF is not set
+    # CONFIG_IPV6_OPTIMISTIC_DAD is not set
+    # CONFIG_INET6_AH is not set
+    # CONFIG_INET6_ESP is not set
+    # CONFIG_INET6_IPCOMP is not set
+    # CONFIG_IPV6_MIP6 is not set
+    # CONFIG_IPV6_VTI is not set
+    CONFIG_IPV6_SIT=m
+    # CONFIG_IPV6_SIT_6RD is not set
+    CONFIG_IPV6_NDISC_NODETYPE=y
+    # CONFIG_IPV6_TUNNEL is not set
+    # CONFIG_IPV6_MULTIPLE_TABLES is not set
+    # CONFIG_IPV6_MROUTE is not set
+    # CONFIG_IPV6_SEG6_LWTUNNEL is not set
+    # CONFIG_IPV6_SEG6_HMAC is not set
+    # CONFIG_IPV6_RPL_LWTUNNEL is not set
+    # CONFIG_IPV6_IOAM6_LWTUNNEL is not set
     # CONFIG_MPTCP is not set
     # CONFIG_NETWORK_SECMARK is not set
     # CONFIG_NETWORK_PHY_TIMESTAMPING is not set
@@ -1026,6 +1050,7 @@ in
     # CONFIG_X25 is not set
     # CONFIG_LAPB is not set
     # CONFIG_PHONET is not set
+    # CONFIG_6LOWPAN is not set
     # CONFIG_IEEE802154 is not set
     CONFIG_NET_SCHED=y
 
@@ -1185,9 +1210,10 @@ in
     # CONFIG_PSAMPLE is not set
     # CONFIG_NET_IFE is not set
     # CONFIG_LWTUNNEL is not set
+    CONFIG_DST_CACHE=y
     CONFIG_GRO_CELLS=y
-    # CONFIG_FAILOVER is not set
-    # CONFIG_ETHTOOL_NETLINK is not set
+    CONFIG_FAILOVER=m
+    CONFIG_ETHTOOL_NETLINK=y
 
     #
     # Device Drivers
@@ -1291,7 +1317,9 @@ in
     CONFIG_EXTRA_FIRMWARE=""
     CONFIG_FW_LOADER_USER_HELPER=y
     # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
-    # CONFIG_FW_LOADER_COMPRESS is not set
+    CONFIG_FW_LOADER_COMPRESS=y
+    CONFIG_FW_LOADER_COMPRESS_XZ=y
+    # CONFIG_FW_LOADER_COMPRESS_ZSTD is not set
     CONFIG_FW_CACHE=y
     # CONFIG_FW_UPLOAD is not set
     # end of Firmware loader
@@ -1314,7 +1342,8 @@ in
     # CONFIG_MHI_BUS_EP is not set
     # end of Bus devices
 
-    # CONFIG_CONNECTOR is not set
+    CONFIG_CONNECTOR=y
+    CONFIG_PROC_EVENTS=y
 
     #
     # Firmware Drivers
@@ -1381,14 +1410,14 @@ in
     # CONFIG_BLK_DEV_PCIESSD_MTIP32XX is not set
     # CONFIG_ZRAM is not set
     CONFIG_BLK_DEV_LOOP=y
-    CONFIG_BLK_DEV_LOOP_MIN_COUNT=8
+    CONFIG_BLK_DEV_LOOP_MIN_COUNT=0
     # CONFIG_BLK_DEV_DRBD is not set
     # CONFIG_BLK_DEV_NBD is not set
     # CONFIG_BLK_DEV_SX8 is not set
     # CONFIG_BLK_DEV_RAM is not set
     # CONFIG_CDROM_PKTCDVD is not set
     # CONFIG_ATA_OVER_ETH is not set
-    # CONFIG_VIRTIO_BLK is not set
+    CONFIG_VIRTIO_BLK=y
     # CONFIG_BLK_DEV_RBD is not set
 
     #
@@ -2725,6 +2754,7 @@ in
     # CONFIG_FB_ASILIANT is not set
     # CONFIG_FB_IMSTT is not set
     # CONFIG_FB_VGA16 is not set
+    # CONFIG_FB_UVESA is not set
     # CONFIG_FB_VESA is not set
     CONFIG_FB_EFI=y
     # CONFIG_FB_N411 is not set
@@ -3757,9 +3787,7 @@ in
     # CONFIG_PHY_INTEL_LGM_EMMC is not set
     # end of PHY Subsystem
 
-    CONFIG_POWERCAP=y
-    # CONFIG_INTEL_RAPL is not set
-    # CONFIG_IDLE_INJECT is not set
+    # CONFIG_POWERCAP is not set
     # CONFIG_MCB is not set
 
     #

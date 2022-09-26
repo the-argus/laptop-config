@@ -28,9 +28,9 @@ in rec {
     themeName = name;
     themePath = "pack_4/${name}";
   };
-  extraExtraSpecialArgs = {inherit (audio-plugins) mpkgs;};
+  extraExtraSpecialArgs = {};
   extraSpecialArgs = {};
-  additionalModules = [audio-plugins.homeManagerModule];
+  additionalModules = [];
   # additionalOverlays = [];
   additionalOverlays = [
     (self: super: let
@@ -43,16 +43,20 @@ in rec {
     in {
       linuxKernel = override super.linuxKernel {
         kernels = {
-          linux_xanmod_latest = super.linuxKernel.manualConfig {
-            stdenv = super.gccStdenv;
-            inherit src version;
-            modDirVersion = "${version}-xanmod1-${super.lib.strings.toUpper hostname}";
-            inherit (super) lib;
-            configfile = super.callPackage ./hardware/kernelconfig.nix {
-              inherit hostname;
-            };
-            allowImportFromDerivation = true;
-          };
+          linux_xanmod_latest =
+            (super.linuxKernel.manualConfig {
+              stdenv = super.gccStdenv;
+              inherit src version;
+              modDirVersion = "${version}-xanmod1-${super.lib.strings.toUpper hostname}";
+              inherit (super) lib;
+              configfile = super.callPackage ./hardware/kernelconfig.nix {
+                inherit hostname;
+              };
+              allowImportFromDerivation = true;
+            })
+            .overrideAttrs (oa: {
+              nativeBuildInputs = (oa.nativeBuildInputs or []) ++ [super.lz4];
+            });
         };
       };
     })
@@ -72,7 +76,7 @@ in rec {
       "OVMFFull"
     ];
     localbuild = [
-      "xorg"
+      # "xorg"
       "gnome-shell"
       "gdm"
       "qtile"
@@ -95,6 +99,7 @@ in rec {
       # "qtile"
       # "neovim"
       # "bash" # cannot be overriden because the stdenv depends on it
+      # "systemd"
       "dash"
       "grub"
       "plymouth"
@@ -208,7 +213,7 @@ in rec {
     name = "unstable";
   };
   localbuildOverrides = override remotebuildOverrides {
-    optimization.useMusl = false;
+    # optimization.useMusl = false;
     name = "localbuild";
   };
 }

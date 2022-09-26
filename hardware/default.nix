@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  unstable,
   lib,
   useFlags,
   plymouth,
@@ -14,7 +15,7 @@
 
   # dual booting with windows boot loader mounted on /efi
   boot = {
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelParams = ["intel_iommu=on" "quiet" "systemd.show_status=0" "loglevel=4" "rd.systemd.show_status=auto" "rd.udev.log-priority=3"];
     loader = {
       efi = {
