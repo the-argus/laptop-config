@@ -1568,7 +1568,7 @@ in
     # CONFIG_ATA_PIIX is not set
     # CONFIG_SATA_DWC is not set
     # CONFIG_SATA_MV is not set
-    CONFIG_SATA_NV=m
+    # CONFIG_SATA_NV is not set
     # CONFIG_SATA_PROMISE is not set
     # CONFIG_SATA_SIL is not set
     CONFIG_SATA_SIS=m
