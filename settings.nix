@@ -56,6 +56,8 @@ in rec {
             })
             .overrideAttrs (oa: {
               nativeBuildInputs = (oa.nativeBuildInputs or []) ++ [super.lz4];
+              rootModules = "xhci_pci thunderbolt nvme usb_storage sd_mod ext2 ext4 ahci ata_piix sd_mod sr_mod uhci_hcd ehci_hcd ehci_pci ohci_hcd ohci_pci xhci_hcd xhci_pci usbhid hid_generic pcips2 atkbd i8042 rtc_cmos dm_mod";
+              # originally "xhci_pci thunderbolt nvme usb_storage sd_mod md_mod raid0 raid1 raid10 raid456 ext2 ext4 ahci sata_nv sata_via sata_sis sata_uli ata_piix pata_marvell sd_mod sr_mod mmc_block uhci_hcd ehci_hcd ehci_pci ohci_hcd ohci_pci xhci_hcd xhci_pci usbhid hid_generic hid_lenovo hid_apple hid_roccat hid_logitech_hidpp hid_logitech_dj hid_microsoft hid_cherry pcips2 atkbd i8042 rtc_cmos dm_mod"
             });
         };
       };
