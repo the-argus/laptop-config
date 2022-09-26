@@ -1565,18 +1565,17 @@ in
     #
     # SATA SFF controllers with BMDMA
     #
-    CONFIG_ATA_PIIX=m
-    CONFIG_SATA_DWC=m
-    # CONFIG_SATA_DWC_OLD_DMA is not set
-    CONFIG_SATA_MV=m
+    # CONFIG_ATA_PIIX is not set
+    # CONFIG_SATA_DWC is not set
+    # CONFIG_SATA_MV is not set
     CONFIG_SATA_NV=m
-    CONFIG_SATA_PROMISE=m
-    CONFIG_SATA_SIL=m
+    # CONFIG_SATA_PROMISE is not set
+    # CONFIG_SATA_SIL is not set
     CONFIG_SATA_SIS=m
-    CONFIG_SATA_SVW=m
-    CONFIG_SATA_ULI=m
+    # CONFIG_SATA_SVW is not set
+    # CONFIG_SATA_ULI is not set
     CONFIG_SATA_VIA=m
-    CONFIG_SATA_VITESSE=m
+    # CONFIG_SATA_VITESSE is not set
 
     #
     # PATA SFF controllers with BMDMA
@@ -3787,7 +3786,7 @@ in
     #
     # PHY Subsystem
     #
-    CONFIG_GENERIC_PHY=y
+    # CONFIG_GENERIC_PHY is not set
     # CONFIG_USB_LGM_PHY is not set
     # CONFIG_PHY_CAN_TRANSCEIVER is not set
 
