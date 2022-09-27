@@ -123,6 +123,9 @@ in rec {
   additionalUserPackages = [
     #"steam"
     "libreoffice-fresh"
+    "godot"
+    "godot-export-templates"
+    "python310Packages.gdtoolkit"
     # {
     #   set = "unstable";
     #   package = "ue4";
