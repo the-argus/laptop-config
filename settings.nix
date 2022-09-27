@@ -32,11 +32,13 @@ in rec {
   extraSpecialArgs = {};
   additionalModules = [];
   # additionalOverlays = [];
-  additionalOverlays = [
-    (import ./hardware/kernel-overlay.nix {
+  additionalOverlays = let
+    kernel = import ./hardware/kernel-overlay.nix {
       inherit override;
       basekernelsuffix = "5_19";
-    })
+    };
+  in [
+    # kernel
   ];
   packageSelections = {
     # packages to override with their unstable versions
