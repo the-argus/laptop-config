@@ -1463,6 +1463,7 @@ in
     # CONFIG_DW_XDATA_PCIE is not set
     # CONFIG_PCI_ENDPOINT_TEST is not set
     # CONFIG_XILINX_SDFEC is not set
+    CONFIG_MISC_RTSX=y
     CONFIG_WINESYNC=m
     # CONFIG_C2PORT is not set
 
@@ -1495,8 +1496,8 @@ in
     # CONFIG_GENWQE is not set
     # CONFIG_ECHO is not set
     # CONFIG_MISC_ALCOR_PCI is not set
-    # CONFIG_MISC_RTSX_PCI is not set
-    # CONFIG_MISC_RTSX_USB is not set
+    CONFIG_MISC_RTSX_PCI=y
+    CONFIG_MISC_RTSX_USB=y
     # CONFIG_HABANA_AI is not set
     # CONFIG_UACCE is not set
     # CONFIG_PVPANIC is not set
@@ -3240,7 +3241,7 @@ in
     CONFIG_USB_OHCI_LITTLE_ENDIAN=y
     CONFIG_USB_SUPPORT=y
     CONFIG_USB_COMMON=y
-    # CONFIG_USB_LED_TRIG is not set
+    CONFIG_USB_LED_TRIG=y
     # CONFIG_USB_ULPI_BUS is not set
     CONFIG_USB_ARCH_HAS_HCD=y
     CONFIG_USB=y
@@ -3270,7 +3271,7 @@ in
     CONFIG_USB_XHCI_PLATFORM=m
     CONFIG_USB_EHCI_HCD=y
     # CONFIG_USB_EHCI_ROOT_HUB_TT is not set
-    CONFIG_USB_EHCI_TT_NEWSCHED=y
+    # CONFIG_USB_EHCI_TT_NEWSCHED is not set
     CONFIG_USB_EHCI_PCI=y
     # CONFIG_USB_EHCI_FSL is not set
     # CONFIG_USB_EHCI_HCD_PLATFORM is not set
@@ -3474,6 +3475,8 @@ in
     # CONFIG_MMC_VUB300 is not set
     # CONFIG_MMC_USHC is not set
     # CONFIG_MMC_USDHI6ROL0 is not set
+    # CONFIG_MMC_REALTEK_PCI is not set
+    # CONFIG_MMC_REALTEK_USB is not set
     # CONFIG_MMC_CQHCI is not set
     # CONFIG_MMC_HSQ is not set
     # CONFIG_MMC_TOSHIBA_PCI is not set
