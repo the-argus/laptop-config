@@ -832,6 +832,8 @@ in
     CONFIG_BLK_MQ_PCI=y
     CONFIG_BLK_MQ_VIRTIO=y
     CONFIG_BLK_PM=y
+    CONFIG_BLOCK_HOLDER_DEPRECATED=y
+    CONFIG_BLK_MQ_STACKING=y
 
     #
     # IO Schedulers
@@ -899,8 +901,10 @@ in
     # CONFIG_MEMORY_HOTPLUG is not set
     CONFIG_SPLIT_PTLOCK_CPUS=4
     CONFIG_ARCH_ENABLE_SPLIT_PMD_PTLOCK=y
+    CONFIG_MEMORY_BALLOON=y
+    CONFIG_BALLOON_COMPACTION=y
     CONFIG_COMPACTION=y
-    # CONFIG_PAGE_REPORTING is not set
+    CONFIG_PAGE_REPORTING=y
     CONFIG_MIGRATION=y
     CONFIG_ARCH_ENABLE_THP_MIGRATION=y
     CONFIG_PHYS_ADDR_T_64BIT=y
@@ -1163,6 +1167,7 @@ in
     # CONFIG_BT_HCIBTUSB_BCM is not set
     # CONFIG_BT_HCIBTUSB_MTK is not set
     CONFIG_BT_HCIBTUSB_RTL=y
+    # CONFIG_BT_HCIBTSDIO is not set
     # CONFIG_BT_HCIUART is not set
     CONFIG_BT_HCIBCM203X=y
     # CONFIG_BT_HCIBPA10X is not set
@@ -1173,6 +1178,7 @@ in
     # CONFIG_BT_HCIVHCI is not set
     # CONFIG_BT_MRVL is not set
     # CONFIG_BT_ATH3K is not set
+    # CONFIG_BT_MTKSDIO is not set
     # CONFIG_BT_VIRTIO is not set
     # end of Bluetooth device drivers
 
@@ -1359,6 +1365,7 @@ in
     CONFIG_DMIID=y
     # CONFIG_DMI_SYSFS is not set
     CONFIG_DMI_SCAN_MACHINE_NON_EFI_FALLBACK=y
+    # CONFIG_ISCSI_IBFT is not set
     # CONFIG_FW_CFG_SYSFS is not set
     CONFIG_SYSFB=y
     # CONFIG_SYSFB_SIMPLEFB is not set
@@ -1529,7 +1536,59 @@ in
     # CONFIG_SCSI_SRP_ATTRS is not set
     # end of SCSI Transports
 
-    # CONFIG_SCSI_LOWLEVEL is not set
+    CONFIG_SCSI_LOWLEVEL=y
+    # CONFIG_ISCSI_TCP is not set
+    # CONFIG_ISCSI_BOOT_SYSFS is not set
+    # CONFIG_SCSI_CXGB3_ISCSI is not set
+    # CONFIG_SCSI_BNX2_ISCSI is not set
+    # CONFIG_BE2ISCSI is not set
+    # CONFIG_BLK_DEV_3W_XXXX_RAID is not set
+    # CONFIG_SCSI_HPSA is not set
+    # CONFIG_SCSI_3W_9XXX is not set
+    # CONFIG_SCSI_3W_SAS is not set
+    # CONFIG_SCSI_ACARD is not set
+    # CONFIG_SCSI_AACRAID is not set
+    # CONFIG_SCSI_AIC7XXX is not set
+    # CONFIG_SCSI_AIC79XX is not set
+    # CONFIG_SCSI_AIC94XX is not set
+    # CONFIG_SCSI_MVSAS is not set
+    # CONFIG_SCSI_MVUMI is not set
+    # CONFIG_SCSI_DPT_I2O is not set
+    # CONFIG_SCSI_ADVANSYS is not set
+    # CONFIG_SCSI_ARCMSR is not set
+    # CONFIG_SCSI_ESAS2R is not set
+    # CONFIG_MEGARAID_NEWGEN is not set
+    # CONFIG_MEGARAID_LEGACY is not set
+    # CONFIG_MEGARAID_SAS is not set
+    # CONFIG_SCSI_MPT3SAS is not set
+    # CONFIG_SCSI_MPT2SAS is not set
+    # CONFIG_SCSI_MPI3MR is not set
+    # CONFIG_SCSI_SMARTPQI is not set
+    # CONFIG_SCSI_HPTIOP is not set
+    # CONFIG_SCSI_BUSLOGIC is not set
+    # CONFIG_SCSI_MYRB is not set
+    # CONFIG_SCSI_MYRS is not set
+    # CONFIG_VMWARE_PVSCSI is not set
+    # CONFIG_SCSI_SNIC is not set
+    # CONFIG_SCSI_DMX3191D is not set
+    # CONFIG_SCSI_FDOMAIN_PCI is not set
+    # CONFIG_SCSI_ISCI is not set
+    # CONFIG_SCSI_IPS is not set
+    # CONFIG_SCSI_INITIO is not set
+    # CONFIG_SCSI_INIA100 is not set
+    # CONFIG_SCSI_STEX is not set
+    # CONFIG_SCSI_SYM53C8XX_2 is not set
+    # CONFIG_SCSI_IPR is not set
+    # CONFIG_SCSI_QLOGIC_1280 is not set
+    # CONFIG_SCSI_QLA_ISCSI is not set
+    # CONFIG_SCSI_DC395x is not set
+    # CONFIG_SCSI_AM53C974 is not set
+    # CONFIG_SCSI_WD719X is not set
+    # CONFIG_SCSI_DEBUG is not set
+    # CONFIG_SCSI_PMCRAID is not set
+    # CONFIG_SCSI_PM8001 is not set
+    CONFIG_SCSI_VIRTIO=m
+    # CONFIG_SCSI_LOWLEVEL_PCMCIA is not set
     # CONFIG_SCSI_DH is not set
     # end of SCSI device support
 
@@ -1564,16 +1623,16 @@ in
     #
     # SATA SFF controllers with BMDMA
     #
-    # CONFIG_ATA_PIIX is not set
+    CONFIG_ATA_PIIX=m
     # CONFIG_SATA_DWC is not set
     # CONFIG_SATA_MV is not set
-    # CONFIG_SATA_NV is not set
+    CONFIG_SATA_NV=m
     # CONFIG_SATA_PROMISE is not set
     # CONFIG_SATA_SIL is not set
     CONFIG_SATA_SIS=m
     # CONFIG_SATA_SVW is not set
-    # CONFIG_SATA_ULI is not set
-    # CONFIG_SATA_VIA is not set
+    CONFIG_SATA_ULI=m
+    CONFIG_SATA_VIA=m
     # CONFIG_SATA_VITESSE is not set
 
     #
@@ -1594,7 +1653,7 @@ in
     # CONFIG_PATA_IT8213 is not set
     # CONFIG_PATA_IT821X is not set
     # CONFIG_PATA_JMICRON is not set
-    # CONFIG_PATA_MARVELL is not set
+    CONFIG_PATA_MARVELL=m
     # CONFIG_PATA_NETCELL is not set
     # CONFIG_PATA_NINJA32 is not set
     # CONFIG_PATA_NS87415 is not set
@@ -1629,7 +1688,34 @@ in
     # CONFIG_PATA_ACPI is not set
     # CONFIG_ATA_GENERIC is not set
     # CONFIG_PATA_LEGACY is not set
-    # CONFIG_MD is not set
+    CONFIG_MD=y
+    # CONFIG_BLK_DEV_MD is not set
+    # CONFIG_BCACHE is not set
+    CONFIG_BLK_DEV_DM_BUILTIN=y
+    CONFIG_BLK_DEV_DM=m
+    # CONFIG_DM_DEBUG is not set
+    # CONFIG_DM_UNSTRIPED is not set
+    # CONFIG_DM_CRYPT is not set
+    # CONFIG_DM_SNAPSHOT is not set
+    # CONFIG_DM_THIN_PROVISIONING is not set
+    # CONFIG_DM_CACHE is not set
+    # CONFIG_DM_WRITECACHE is not set
+    # CONFIG_DM_EBS is not set
+    # CONFIG_DM_ERA is not set
+    # CONFIG_DM_CLONE is not set
+    # CONFIG_DM_MIRROR is not set
+    # CONFIG_DM_RAID is not set
+    # CONFIG_DM_ZERO is not set
+    # CONFIG_DM_MULTIPATH is not set
+    # CONFIG_DM_DELAY is not set
+    # CONFIG_DM_DUST is not set
+    # CONFIG_DM_UEVENT is not set
+    # CONFIG_DM_FLAKEY is not set
+    # CONFIG_DM_VERITY is not set
+    # CONFIG_DM_SWITCH is not set
+    # CONFIG_DM_LOG_WRITES is not set
+    # CONFIG_DM_INTEGRITY is not set
+    # CONFIG_DM_AUDIT is not set
     # CONFIG_TARGET_CORE is not set
     # CONFIG_FUSION is not set
 
@@ -1642,7 +1728,26 @@ in
 
     # CONFIG_MACINTOSH_DRIVERS is not set
     CONFIG_NETDEVICES=y
-    # CONFIG_NET_CORE is not set
+    CONFIG_NET_CORE=y
+    # CONFIG_BONDING is not set
+    # CONFIG_DUMMY is not set
+    # CONFIG_WIREGUARD is not set
+    # CONFIG_EQUALIZER is not set
+    # CONFIG_NET_FC is not set
+    # CONFIG_NET_TEAM is not set
+    # CONFIG_MACVLAN is not set
+    # CONFIG_IPVLAN is not set
+    # CONFIG_VXLAN is not set
+    # CONFIG_GENEVE is not set
+    # CONFIG_BAREUDP is not set
+    # CONFIG_GTP is not set
+    # CONFIG_MACSEC is not set
+    # CONFIG_NETCONSOLE is not set
+    # CONFIG_TUN is not set
+    # CONFIG_TUN_VNET_CROSS_LE is not set
+    # CONFIG_VETH is not set
+    CONFIG_VIRTIO_NET=m
+    # CONFIG_NLMON is not set
     # CONFIG_ARCNET is not set
     # CONFIG_ETHERNET is not set
     # CONFIG_FDDI is not set
@@ -1700,6 +1805,7 @@ in
     # CONFIG_WLAN_VENDOR_REALTEK is not set
     # CONFIG_WLAN_VENDOR_RSI is not set
     CONFIG_WLAN_VENDOR_SILABS=y
+    # CONFIG_WFX is not set
     # CONFIG_WLAN_VENDOR_ST is not set
     # CONFIG_WLAN_VENDOR_TI is not set
     # CONFIG_WLAN_VENDOR_ZYDAS is not set
@@ -1720,7 +1826,7 @@ in
     # CONFIG_VMXNET3 is not set
     # CONFIG_FUJITSU_ES is not set
     # CONFIG_USB4_NET is not set
-    # CONFIG_NET_FAILOVER is not set
+    CONFIG_NET_FAILOVER=m
     # CONFIG_ISDN is not set
 
     #
@@ -1836,7 +1942,7 @@ in
     CONFIG_SERIO_I8042=y
     CONFIG_SERIO_SERPORT=y
     # CONFIG_SERIO_CT82C710 is not set
-    # CONFIG_SERIO_PCIPS2 is not set
+    CONFIG_SERIO_PCIPS2=m
     CONFIG_SERIO_LIBPS2=y
     # CONFIG_SERIO_RAW is not set
     # CONFIG_SERIO_ALTERA_PS2 is not set
@@ -2992,7 +3098,7 @@ in
     #
     CONFIG_HID=y
     # CONFIG_HID_BATTERY_STRENGTH is not set
-    # CONFIG_HIDRAW is not set
+    CONFIG_HIDRAW=y
     # CONFIG_UHID is not set
     CONFIG_HID_GENERIC=y
 
@@ -3002,14 +3108,14 @@ in
     # CONFIG_HID_A4TECH is not set
     # CONFIG_HID_ACCUTOUCH is not set
     # CONFIG_HID_ACRUX is not set
-    # CONFIG_HID_APPLE is not set
+    CONFIG_HID_APPLE=m
     # CONFIG_HID_APPLEIR is not set
     # CONFIG_HID_ASUS is not set
     # CONFIG_HID_AUREAL is not set
     # CONFIG_HID_BELKIN is not set
     # CONFIG_HID_BETOP_FF is not set
     # CONFIG_HID_BIGBEN_FF is not set
-    # CONFIG_HID_CHERRY is not set
+    CONFIG_HID_CHERRY=m
     # CONFIG_HID_CHICONY is not set
     # CONFIG_HID_CORSAIR is not set
     # CONFIG_HID_COUGAR is not set
@@ -3024,6 +3130,7 @@ in
     # CONFIG_HID_ELECOM is not set
     # CONFIG_HID_ELO is not set
     # CONFIG_HID_EZKEY is not set
+    # CONFIG_HID_FT260 is not set
     # CONFIG_HID_GEMBIRD is not set
     # CONFIG_HID_GFRM is not set
     # CONFIG_HID_GLORIOUS is not set
@@ -3044,9 +3151,10 @@ in
     # CONFIG_HID_KENSINGTON is not set
     # CONFIG_HID_LCPOWER is not set
     # CONFIG_HID_LED is not set
-    # CONFIG_HID_LENOVO is not set
+    CONFIG_HID_LENOVO=m
     # CONFIG_HID_LETSKETCH is not set
     CONFIG_HID_LOGITECH=m
+    CONFIG_HID_LOGITECH_DJ=m
     CONFIG_HID_LOGITECH_HIDPP=m
     # CONFIG_LOGITECH_FF is not set
     # CONFIG_LOGIRUMBLEPAD2_FF is not set
@@ -3072,7 +3180,7 @@ in
     CONFIG_HID_RAZER=m
     # CONFIG_HID_PRIMAX is not set
     # CONFIG_HID_RETRODE is not set
-    # CONFIG_HID_ROCCAT is not set
+    CONFIG_HID_ROCCAT=m
     # CONFIG_HID_SAITEK is not set
     # CONFIG_HID_SAMSUNG is not set
     # CONFIG_HID_SEMITEK is not set
@@ -3169,7 +3277,9 @@ in
     # CONFIG_USB_OXU210HP_HCD is not set
     # CONFIG_USB_ISP116X_HCD is not set
     # CONFIG_USB_FOTG210_HCD is not set
-    # CONFIG_USB_OHCI_HCD is not set
+    CONFIG_USB_OHCI_HCD=m
+    CONFIG_USB_OHCI_HCD_PCI=m
+    # CONFIG_USB_OHCI_HCD_PLATFORM is not set
     CONFIG_USB_UHCI_HCD=y
     # CONFIG_USB_SL811_HCD is not set
     # CONFIG_USB_R8A66597_HCD is not set
@@ -3345,7 +3455,29 @@ in
 
     CONFIG_USB_ROLE_SWITCH=m
     # CONFIG_USB_ROLES_INTEL_XHCI is not set
-    # CONFIG_MMC is not set
+    CONFIG_MMC=m
+    CONFIG_MMC_BLOCK=m
+    CONFIG_MMC_BLOCK_MINORS=8
+    # CONFIG_SDIO_UART is not set
+    # CONFIG_MMC_TEST is not set
+
+    #
+    # MMC/SD/SDIO Host Controller Drivers
+    #
+    # CONFIG_MMC_DEBUG is not set
+    # CONFIG_MMC_SDHCI is not set
+    # CONFIG_MMC_WBSD is not set
+    # CONFIG_MMC_TIFM_SD is not set
+    # CONFIG_MMC_SDRICOH_CS is not set
+    # CONFIG_MMC_CB710 is not set
+    # CONFIG_MMC_VIA_SDMMC is not set
+    # CONFIG_MMC_VUB300 is not set
+    # CONFIG_MMC_USHC is not set
+    # CONFIG_MMC_USDHI6ROL0 is not set
+    # CONFIG_MMC_CQHCI is not set
+    # CONFIG_MMC_HSQ is not set
+    # CONFIG_MMC_TOSHIBA_PCI is not set
+    # CONFIG_MMC_MTK is not set
     # CONFIG_SCSI_UFSHCD is not set
     # CONFIG_MEMSTICK is not set
     CONFIG_NEW_LEDS=y
@@ -3556,10 +3688,13 @@ in
     # CONFIG_EFI_SECRET is not set
     CONFIG_VIRTIO_ANCHOR=y
     CONFIG_VIRTIO=y
+    CONFIG_VIRTIO_PCI_LIB=m
+    CONFIG_VIRTIO_PCI_LIB_LEGACY=m
     CONFIG_VIRTIO_MENU=y
-    # CONFIG_VIRTIO_PCI is not set
-    # CONFIG_VIRTIO_BALLOON is not set
-    # CONFIG_VIRTIO_INPUT is not set
+    CONFIG_VIRTIO_PCI=m
+    CONFIG_VIRTIO_PCI_LEGACY=y
+    CONFIG_VIRTIO_BALLOON=m
+    CONFIG_VIRTIO_INPUT=m
     # CONFIG_VIRTIO_MMIO is not set
     CONFIG_VIRTIO_DMA_SHARED_BUFFER=y
     # CONFIG_VDPA is not set
