@@ -34,12 +34,29 @@ in rec {
   # additionalOverlays = [];
   additionalOverlays = [
     (self: super: let
-      src = super.fetchgit {
-        url = "https://github.com/xanmod/linux";
-        rev = "5cf14a5e02b970855983958aa992e19b15c01840";
-        sha256 = "0nd1callf7hlixdifi3dyfs5jpnrypc1lnxk2bqbyk768mlpfkjb";
+      basekernelsuffix = "5_19";
+      dirVersionNames = {
+        xanmod_latest = "xanmod";
+        "5_15" = "";
+        "5_19" = "";
       };
-      version = "5.19.9";
+      dirVersionName =
+        if builtins.hasAttr basekernelsuffix dirVersionNames
+        then
+          (
+            if dirVersionNames.${basekernelsuffix} == ""
+            then ""
+            else "-${dirVersionNames.${basekernelsuffix}}1"
+          )
+        else basekernelsuffix;
+      basekernel = "linux${
+        if basekernelsuffix == ""
+        then ""
+        else "_"
+      }${basekernelsuffix}";
+      src = super.linuxKernel.kernels.${basekernel}.src;
+      version = super.linuxKernel.kernels.${basekernel}.version;
+      override = nixpkgs.lib.attrsets.recursiveUpdate;
     in {
       linuxKernel = override super.linuxKernel {
         kernels = {
@@ -47,7 +64,7 @@ in rec {
             (super.linuxKernel.manualConfig {
               stdenv = super.gccStdenv;
               inherit src version;
-              modDirVersion = "${version}-xanmod1-${super.lib.strings.toUpper hostname}";
+              modDirVersion = "${version}${dirVersionName}-${super.lib.strings.toUpper hostname}";
               inherit (super) lib;
               configfile = super.callPackage ./hardware/kernelconfig.nix {
                 inherit hostname;
