@@ -91,7 +91,7 @@
   # display -------------------------------------------------------------------
   hardware.opengl = {
     driSupport32Bit = false;
-    dirSupport = true;
+    driSupport = true;
     extraPackages = with pkgs; [
       intel-media-driver
     ];
