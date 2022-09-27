@@ -3975,7 +3975,7 @@ in
     # CONFIG_EXT2_FS_XATTR is not set
     # CONFIG_EXT3_FS is not set
     CONFIG_EXT4_FS=y
-    # CONFIG_EXT4_FS_POSIX_ACL is not set
+    CONFIG_EXT4_FS_POSIX_ACL=y
     # CONFIG_EXT4_FS_SECURITY is not set
     # CONFIG_EXT4_DEBUG is not set
     CONFIG_JBD2=y
@@ -3986,14 +3986,14 @@ in
     CONFIG_XFS_FS=y
     # CONFIG_XFS_SUPPORT_V4 is not set
     # CONFIG_XFS_QUOTA is not set
-    # CONFIG_XFS_POSIX_ACL is not set
+    CONFIG_XFS_POSIX_ACL=y
     # CONFIG_XFS_RT is not set
     # CONFIG_XFS_ONLINE_SCRUB is not set
     # CONFIG_XFS_WARN is not set
     # CONFIG_XFS_DEBUG is not set
     # CONFIG_GFS2_FS is not set
     CONFIG_BTRFS_FS=y
-    # CONFIG_BTRFS_FS_POSIX_ACL is not set
+    CONFIG_BTRFS_FS_POSIX_ACL=y
     # CONFIG_BTRFS_FS_CHECK_INTEGRITY is not set
     # CONFIG_BTRFS_FS_RUN_SANITY_TESTS is not set
     # CONFIG_BTRFS_DEBUG is not set

@@ -1,6 +1,7 @@
 {
   override,
   basekernelsuffix,
+  hostname,
   ...
 }: (self: super: let
   dirVersionNames = {
@@ -24,7 +25,6 @@
   }${basekernelsuffix}";
   src = super.linuxKernel.kernels.${basekernel}.src;
   version = super.linuxKernel.kernels.${basekernel}.version;
-  override = nixpkgs.lib.attrsets.recursiveUpdate;
 in {
   linuxKernel = override super.linuxKernel {
     kernels = {

@@ -34,11 +34,11 @@ in rec {
   # additionalOverlays = [];
   additionalOverlays = let
     kernel = import ./hardware/kernel-overlay.nix {
-      inherit override;
+      inherit override hostname;
       basekernelsuffix = "5_19";
     };
   in [
-    # kernel
+    kernel
   ];
   packageSelections = {
     # packages to override with their unstable versions
