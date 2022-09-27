@@ -35,10 +35,10 @@ in rec {
   additionalOverlays = let
     kernel = import ./hardware/kernel-overlay.nix {
       inherit override hostname;
-      basekernelsuffix = "5_19";
+      basekernelsuffix = "xanmod_latest";
     };
   in [
-    kernel
+    # kernel
   ];
   packageSelections = {
     # packages to override with their unstable versions
@@ -75,14 +75,15 @@ in rec {
         set2 = xorgPkg;
       };
     in [
-      # "qtile"
-      # "neovim"
-      # "bash" # cannot be overriden because the stdenv depends on it
-      # "systemd"
       "dash"
       "grub"
       "plymouth"
       "coreutils-full"
+
+      # "qtile"
+      # "neovim"
+      # "bash" # cannot be overriden because the stdenv depends on it
+      # "systemd"
       # this causes system breakages
       # "zsh" "zplug"
       # none of these work (ie they dont apply, these packages wont build
