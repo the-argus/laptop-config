@@ -826,6 +826,7 @@ builtins.toFile "kernelconfig" ''
 
   CONFIG_BLOCK_COMPAT=y
   CONFIG_BLK_MQ_PCI=y
+  CONFIG_BLK_MQ_VIRTIO=y
   CONFIG_BLK_PM=y
   CONFIG_BLOCK_HOLDER_DEPRECATED=y
   CONFIG_BLK_MQ_STACKING=y
@@ -1172,6 +1173,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_BT_MRVL is not set
   # CONFIG_BT_ATH3K is not set
   # CONFIG_BT_MTKSDIO is not set
+  # CONFIG_BT_VIRTIO is not set
   # end of Bluetooth device drivers
 
   # CONFIG_AF_RXRPC is not set
@@ -1210,7 +1212,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_LWTUNNEL is not set
   CONFIG_DST_CACHE=y
   CONFIG_GRO_CELLS=y
-  CONFIG_FAILOVER=m
+  CONFIG_FAILOVER=y
   CONFIG_ETHTOOL_NETLINK=y
 
   #
@@ -1418,6 +1420,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_BLK_DEV_RAM is not set
   # CONFIG_CDROM_PKTCDVD is not set
   # CONFIG_ATA_OVER_ETH is not set
+  # CONFIG_VIRTIO_BLK is not set
   # CONFIG_BLK_DEV_RBD is not set
 
   #
@@ -1580,6 +1583,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_SCSI_DEBUG is not set
   # CONFIG_SCSI_PMCRAID is not set
   # CONFIG_SCSI_PM8001 is not set
+  # CONFIG_SCSI_VIRTIO is not set
   # CONFIG_SCSI_LOWLEVEL_PCMCIA is not set
   # CONFIG_SCSI_DH is not set
   # end of SCSI device support
@@ -1737,10 +1741,11 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_GTP is not set
   # CONFIG_MACSEC is not set
   # CONFIG_NETCONSOLE is not set
-  CONFIG_TUN=y
+  # CONFIG_TUN is not set
   CONFIG_TAP=m
   # CONFIG_TUN_VNET_CROSS_LE is not set
   # CONFIG_VETH is not set
+  CONFIG_VIRTIO_NET=y
   # CONFIG_NLMON is not set
   # CONFIG_ARCNET is not set
   # CONFIG_ETHERNET is not set
@@ -1821,7 +1826,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_VMXNET3 is not set
   # CONFIG_FUJITSU_ES is not set
   # CONFIG_USB4_NET is not set
-  CONFIG_NET_FAILOVER=m
+  CONFIG_NET_FAILOVER=y
   # CONFIG_ISDN is not set
 
   #
@@ -2007,8 +2012,9 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_N_GSM is not set
   # CONFIG_NOZOMI is not set
   # CONFIG_NULL_TTY is not set
+  CONFIG_HVC_DRIVER=y
   # CONFIG_SERIAL_DEV_BUS is not set
-  # CONFIG_VIRTIO_CONSOLE is not set
+  CONFIG_VIRTIO_CONSOLE=y
   # CONFIG_IPMI_HANDLER is not set
   # CONFIG_HW_RANDOM is not set
   # CONFIG_APPLICOM is not set
@@ -3087,6 +3093,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_SND_PCMCIA is not set
   # CONFIG_SND_SOC is not set
   # CONFIG_SND_X86 is not set
+  # CONFIG_SND_VIRTIO is not set
 
   #
   # HID support
@@ -3681,6 +3688,8 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_VFIO is not set
   CONFIG_IRQ_BYPASS_MANAGER=y
   # CONFIG_VIRT_DRIVERS is not set
+  CONFIG_VIRTIO_ANCHOR=y
+  CONFIG_VIRTIO=y
   # CONFIG_VIRTIO_MENU is not set
   # CONFIG_VDPA is not set
   CONFIG_VHOST_IOTLB=m
@@ -3830,6 +3839,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_AMD_IOMMU is not set
   # CONFIG_INTEL_IOMMU is not set
   # CONFIG_IRQ_REMAP is not set
+  # CONFIG_VIRTIO_IOMMU is not set
 
   #
   # Remoteproc drivers
@@ -4412,6 +4422,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_CRYPTO_DEV_QAT_C3XXXVF is not set
   # CONFIG_CRYPTO_DEV_QAT_C62XVF is not set
   # CONFIG_CRYPTO_DEV_NITROX_CNN55XX is not set
+  # CONFIG_CRYPTO_DEV_VIRTIO is not set
   # CONFIG_CRYPTO_DEV_SAFEXCEL is not set
   # CONFIG_CRYPTO_DEV_AMLOGIC_GXL is not set
   CONFIG_ASYMMETRIC_KEY_TYPE=y
