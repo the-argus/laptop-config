@@ -1789,10 +1789,11 @@ in
     # CONFIG_IPW2200 is not set
     # CONFIG_IWL4965 is not set
     # CONFIG_IWL3945 is not set
-    CONFIG_IWLWIFI=y
+    CONFIG_IWLWIFI=m
     CONFIG_IWLWIFI_LEDS=y
-    CONFIG_IWLDVM=y
-    CONFIG_IWLMVM=y
+    CONFIG_IWLDVM=m
+    CONFIG_IWLMVM=m
+    CONFIG_IWLWIFI_OPMODE_MODULAR=y
 
     #
     # Debugging Options

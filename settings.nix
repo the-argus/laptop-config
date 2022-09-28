@@ -38,7 +38,7 @@ in rec {
       basekernelsuffix = "xanmod_latest";
     };
   in [
-    # kernel
+    kernel
   ];
   packageSelections = {
     # packages to override with their unstable versions
