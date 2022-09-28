@@ -1420,7 +1420,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_BLK_DEV_RAM is not set
   # CONFIG_CDROM_PKTCDVD is not set
   # CONFIG_ATA_OVER_ETH is not set
-  # CONFIG_VIRTIO_BLK is not set
+  CONFIG_VIRTIO_BLK=y
   # CONFIG_BLK_DEV_RBD is not set
 
   #
@@ -1583,7 +1583,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_SCSI_DEBUG is not set
   # CONFIG_SCSI_PMCRAID is not set
   # CONFIG_SCSI_PM8001 is not set
-  # CONFIG_SCSI_VIRTIO is not set
+  CONFIG_SCSI_VIRTIO=y
   # CONFIG_SCSI_LOWLEVEL_PCMCIA is not set
   # CONFIG_SCSI_DH is not set
   # end of SCSI device support
@@ -2806,6 +2806,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_DRM_AST is not set
   # CONFIG_DRM_MGAG200 is not set
   # CONFIG_DRM_QXL is not set
+  # CONFIG_DRM_VIRTIO_GPU is not set
   CONFIG_DRM_PANEL=y
 
   #
@@ -3690,7 +3691,13 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_VIRT_DRIVERS is not set
   CONFIG_VIRTIO_ANCHOR=y
   CONFIG_VIRTIO=y
-  # CONFIG_VIRTIO_MENU is not set
+  CONFIG_VIRTIO_PCI_LIB=y
+  CONFIG_VIRTIO_MENU=y
+  CONFIG_VIRTIO_PCI=y
+  # CONFIG_VIRTIO_PCI_LEGACY is not set
+  # CONFIG_VIRTIO_BALLOON is not set
+  # CONFIG_VIRTIO_INPUT is not set
+  # CONFIG_VIRTIO_MMIO is not set
   # CONFIG_VDPA is not set
   CONFIG_VHOST_IOTLB=m
   CONFIG_VHOST=m
