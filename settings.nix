@@ -31,15 +31,7 @@ in rec {
   extraExtraSpecialArgs = {};
   extraSpecialArgs = {};
   additionalModules = [];
-  # additionalOverlays = [];
-  additionalOverlays = let
-    kernel = import ./hardware/kernel-overlay.nix {
-      inherit override hostname;
-      basekernelsuffix = "xanmod_latest";
-    };
-  in [
-    kernel
-  ];
+  additionalOverlays = [];
   packageSelections = {
     # packages to override with their unstable versions
     # all of these are things that i might want to move
@@ -53,17 +45,17 @@ in rec {
       "ungoogled-chromium"
       "firefox"
       "OVMFFull"
+      {
+        set1 = "linuxKernel";
+        set2 = "kernels";
+        set3 = "linux_xanmod_latest";
+      }
     ];
     localbuild = [
       # "xorg"
       "gnome-shell"
       "gdm"
       "qtile"
-      {
-        set1 = "linuxKernel";
-        set2 = "kernels";
-        set3 = "linux_xanmod_latest";
-      }
       "zsh"
       "zplug"
       "kitty"
@@ -194,6 +186,14 @@ in rec {
   };
   unstableOverrides = {
     name = "unstable";
+    additionalOverlays = let
+      kernel = import ./hardware/kernel-overlay.nix {
+        inherit override hostname;
+        basekernelsuffix = "xanmod_latest";
+      };
+    in [
+      kernel
+    ];
   };
   localbuildOverrides = override remotebuildOverrides {
     # optimization.useMusl = false;

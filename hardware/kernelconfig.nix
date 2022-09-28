@@ -8,6 +8,7 @@
     if bool
     then "y"
     else "n";
+  # firmware = pkgs.linux-firmware;
 in
   builtins.toFile "kernelconfig" ''
     #
@@ -1318,7 +1319,8 @@ in
     CONFIG_FW_LOADER_PAGED_BUF=y
     CONFIG_FW_LOADER_SYSFS=y
     CONFIG_EXTRA_FIRMWARE="regulatory.db.xz i915/tgl_dmc_ver2_12.bin.xz iwlwifi-QuZ-a0-hr-b0-71.ucode.xz"
-    CONFIG_EXTRA_FIRMWARE_DIR="${firmware}/lib/firmware"
+    # CONFIG_EXTRA_FIRMWARE_DIR="$\{firmware}/lib/firmware"
+    CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"
     CONFIG_FW_LOADER_USER_HELPER=y
     # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
     CONFIG_FW_LOADER_COMPRESS=y
