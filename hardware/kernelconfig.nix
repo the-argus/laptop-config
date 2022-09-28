@@ -85,7 +85,6 @@ in
     CONFIG_IRQ_DOMAIN_HIERARCHY=y
     CONFIG_GENERIC_MSI_IRQ=y
     CONFIG_GENERIC_MSI_IRQ_DOMAIN=y
-    CONFIG_IRQ_MSI_IOMMU=y
     CONFIG_GENERIC_IRQ_MATRIX_ALLOCATOR=y
     CONFIG_GENERIC_IRQ_RESERVATION_MODE=y
     CONFIG_IRQ_FORCED_THREADING=y
@@ -559,7 +558,6 @@ in
     # CONFIG_ACPI_PFRUT is not set
     CONFIG_ACPI_PCC=y
     # CONFIG_PMIC_OPREGION is not set
-    CONFIG_ACPI_VIOT=y
     CONFIG_X86_PM_TIMER=y
     CONFIG_ACPI_PRMT=y
 
@@ -832,7 +830,6 @@ in
 
     CONFIG_BLOCK_COMPAT=y
     CONFIG_BLK_MQ_PCI=y
-    CONFIG_BLK_MQ_VIRTIO=y
     CONFIG_BLK_PM=y
     CONFIG_BLOCK_HOLDER_DEPRECATED=y
     CONFIG_BLK_MQ_STACKING=y
@@ -903,8 +900,6 @@ in
     # CONFIG_MEMORY_HOTPLUG is not set
     CONFIG_SPLIT_PTLOCK_CPUS=4
     CONFIG_ARCH_ENABLE_SPLIT_PMD_PTLOCK=y
-    CONFIG_MEMORY_BALLOON=y
-    CONFIG_BALLOON_COMPACTION=y
     CONFIG_COMPACTION=y
     CONFIG_PAGE_REPORTING=y
     CONFIG_MIGRATION=y
@@ -1155,23 +1150,23 @@ in
     CONFIG_BT_HS=y
     CONFIG_BT_LE=y
     CONFIG_BT_LEDS=y
-    # CONFIG_BT_MSFTEXT is not set
-    # CONFIG_BT_AOSPEXT is not set
+    CONFIG_BT_MSFTEXT=y
+    CONFIG_BT_AOSPEXT=y
     # CONFIG_BT_FEATURE_DEBUG is not set
 
     #
     # Bluetooth device drivers
     #
-    CONFIG_BT_INTEL=y
-    CONFIG_BT_RTL=y
-    CONFIG_BT_HCIBTUSB=y
+    CONFIG_BT_INTEL=m
+    CONFIG_BT_RTL=m
+    CONFIG_BT_HCIBTUSB=m
     # CONFIG_BT_HCIBTUSB_AUTOSUSPEND is not set
     # CONFIG_BT_HCIBTUSB_BCM is not set
     # CONFIG_BT_HCIBTUSB_MTK is not set
     CONFIG_BT_HCIBTUSB_RTL=y
     # CONFIG_BT_HCIBTSDIO is not set
     # CONFIG_BT_HCIUART is not set
-    CONFIG_BT_HCIBCM203X=y
+    CONFIG_BT_HCIBCM203X=m
     # CONFIG_BT_HCIBPA10X is not set
     # CONFIG_BT_HCIBFUSB is not set
     # CONFIG_BT_HCIDTL1 is not set
@@ -1181,7 +1176,6 @@ in
     # CONFIG_BT_MRVL is not set
     # CONFIG_BT_ATH3K is not set
     # CONFIG_BT_MTKSDIO is not set
-    # CONFIG_BT_VIRTIO is not set
     # end of Bluetooth device drivers
 
     # CONFIG_AF_RXRPC is not set
@@ -1323,7 +1317,8 @@ in
     CONFIG_FW_LOADER=y
     CONFIG_FW_LOADER_PAGED_BUF=y
     CONFIG_FW_LOADER_SYSFS=y
-    CONFIG_EXTRA_FIRMWARE=""
+    CONFIG_EXTRA_FIRMWARE="regulatory.db.xz i915/tgl_dmc_ver2_12.bin.xz iwlwifi-QuZ-a0-hr-b0-71.ucode.xz"
+    CONFIG_EXTRA_FIRMWARE_DIR="${firmware}/lib/firmware"
     CONFIG_FW_LOADER_USER_HELPER=y
     # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
     CONFIG_FW_LOADER_COMPRESS=y
@@ -1428,7 +1423,6 @@ in
     # CONFIG_BLK_DEV_RAM is not set
     # CONFIG_CDROM_PKTCDVD is not set
     # CONFIG_ATA_OVER_ETH is not set
-    CONFIG_VIRTIO_BLK=y
     # CONFIG_BLK_DEV_RBD is not set
 
     #
@@ -1503,7 +1497,6 @@ in
     CONFIG_MISC_RTSX_PCI=y
     CONFIG_MISC_RTSX_USB=y
     # CONFIG_HABANA_AI is not set
-    # CONFIG_UACCE is not set
     # CONFIG_PVPANIC is not set
     # end of Misc devices
 
@@ -1592,7 +1585,6 @@ in
     # CONFIG_SCSI_DEBUG is not set
     # CONFIG_SCSI_PMCRAID is not set
     # CONFIG_SCSI_PM8001 is not set
-    CONFIG_SCSI_VIRTIO=m
     # CONFIG_SCSI_LOWLEVEL_PCMCIA is not set
     # CONFIG_SCSI_DH is not set
     # end of SCSI device support
@@ -1751,7 +1743,6 @@ in
     # CONFIG_TUN is not set
     # CONFIG_TUN_VNET_CROSS_LE is not set
     # CONFIG_VETH is not set
-    CONFIG_VIRTIO_NET=m
     # CONFIG_NLMON is not set
     # CONFIG_ARCNET is not set
     # CONFIG_ETHERNET is not set
@@ -1789,11 +1780,10 @@ in
     # CONFIG_IPW2200 is not set
     # CONFIG_IWL4965 is not set
     # CONFIG_IWL3945 is not set
-    CONFIG_IWLWIFI=m
+    CONFIG_IWLWIFI=y
     CONFIG_IWLWIFI_LEDS=y
-    CONFIG_IWLDVM=m
-    CONFIG_IWLMVM=m
-    CONFIG_IWLWIFI_OPMODE_MODULAR=y
+    CONFIG_IWLDVM=y
+    CONFIG_IWLMVM=y
 
     #
     # Debugging Options
@@ -2347,6 +2337,8 @@ in
     #
     # CONFIG_SENSORS_ACPI_POWER is not set
     # CONFIG_SENSORS_ATK0110 is not set
+    # CONFIG_SENSORS_ASUS_WMI is not set
+    # CONFIG_SENSORS_ASUS_WMI_EC is not set
     # CONFIG_SENSORS_ASUS_EC is not set
     CONFIG_THERMAL=y
     # CONFIG_THERMAL_NETLINK is not set
@@ -2809,7 +2801,6 @@ in
     # CONFIG_DRM_AST is not set
     # CONFIG_DRM_MGAG200 is not set
     # CONFIG_DRM_QXL is not set
-    CONFIG_DRM_VIRTIO_GPU=y
     CONFIG_DRM_PANEL=y
 
     #
@@ -3097,7 +3088,6 @@ in
     # CONFIG_SND_PCMCIA is not set
     # CONFIG_SND_SOC is not set
     # CONFIG_SND_X86 is not set
-    CONFIG_SND_VIRTIO=y
 
     #
     # HID support
@@ -3691,22 +3681,8 @@ in
     # CONFIG_UIO is not set
     # CONFIG_VFIO is not set
     CONFIG_IRQ_BYPASS_MANAGER=y
-    CONFIG_VIRT_DRIVERS=y
-    CONFIG_VMGENID=y
-    # CONFIG_VBOXGUEST is not set
-    # CONFIG_NITRO_ENCLAVES is not set
-    # CONFIG_EFI_SECRET is not set
-    CONFIG_VIRTIO_ANCHOR=y
-    CONFIG_VIRTIO=y
-    CONFIG_VIRTIO_PCI_LIB=m
-    CONFIG_VIRTIO_PCI_LIB_LEGACY=m
-    CONFIG_VIRTIO_MENU=y
-    CONFIG_VIRTIO_PCI=m
-    CONFIG_VIRTIO_PCI_LEGACY=y
-    CONFIG_VIRTIO_BALLOON=m
-    CONFIG_VIRTIO_INPUT=m
-    # CONFIG_VIRTIO_MMIO is not set
-    CONFIG_VIRTIO_DMA_SHARED_BUFFER=y
+    # CONFIG_VIRT_DRIVERS is not set
+    # CONFIG_VIRTIO_MENU is not set
     # CONFIG_VDPA is not set
     CONFIG_VHOST_IOTLB=y
     CONFIG_VHOST=y
@@ -3724,9 +3700,18 @@ in
     # CONFIG_COMEDI is not set
     # CONFIG_STAGING is not set
     CONFIG_X86_PLATFORM_DEVICES=y
-    # CONFIG_ACPI_WMI is not set
+    CONFIG_ACPI_WMI=y
+    # CONFIG_WMI_BMOF is not set
+    # CONFIG_HUAWEI_WMI is not set
+    # CONFIG_MXM_WMI is not set
+    # CONFIG_PEAQ_WMI is not set
+    # CONFIG_NVIDIA_WMI_EC_BACKLIGHT is not set
+    # CONFIG_XIAOMI_WMI is not set
+    # CONFIG_GIGABYTE_WMI is not set
+    # CONFIG_YOGABOOK_WMI is not set
     # CONFIG_ACERHDF is not set
     # CONFIG_ACER_WIRELESS is not set
+    # CONFIG_ACER_WMI is not set
     # CONFIG_AMD_PMC is not set
     # CONFIG_AMD_HSMP is not set
     # CONFIG_ADV_SWBUTTON is not set
@@ -3734,23 +3719,32 @@ in
     # CONFIG_ASUS_LAPTOP is not set
     # CONFIG_ASUS_WIRELESS is not set
     CONFIG_X86_PLATFORM_DRIVERS_DELL=y
+    # CONFIG_ALIENWARE_WMI is not set
     CONFIG_DCDBAS=y
     CONFIG_DELL_LAPTOP=m
     CONFIG_DELL_RBU=y
     CONFIG_DELL_RBTN=y
     CONFIG_DELL_SMBIOS=y
-    # CONFIG_DELL_SMBIOS_SMM is not set
+    CONFIG_DELL_SMBIOS_WMI=y
+    CONFIG_DELL_SMBIOS_SMM=y
     # CONFIG_DELL_SMO8800 is not set
+    # CONFIG_DELL_WMI is not set
+    # CONFIG_DELL_WMI_AIO is not set
+    CONFIG_DELL_WMI_DESCRIPTOR=y
+    # CONFIG_DELL_WMI_LED is not set
+    # CONFIG_DELL_WMI_SYSMAN is not set
     # CONFIG_AMILO_RFKILL is not set
     # CONFIG_FUJITSU_LAPTOP is not set
     # CONFIG_FUJITSU_TABLET is not set
     # CONFIG_GPD_POCKET_FAN is not set
     # CONFIG_HP_ACCEL is not set
     # CONFIG_WIRELESS_HOTKEY is not set
+    # CONFIG_HP_WMI is not set
     # CONFIG_IBM_RTL is not set
     # CONFIG_IDEAPAD_LAPTOP is not set
     # CONFIG_SENSORS_HDAPS is not set
     # CONFIG_THINKPAD_ACPI is not set
+    # CONFIG_THINKPAD_LMI is not set
     # CONFIG_INTEL_ATOMISP2_PM is not set
     # CONFIG_INTEL_SAR_INT1092 is not set
     # CONFIG_INTEL_PMC_CORE is not set
@@ -3760,6 +3754,9 @@ in
     #
     # CONFIG_INTEL_SPEED_SELECT_INTERFACE is not set
     # end of Intel Speed Select Technology interface support
+
+    # CONFIG_INTEL_WMI_SBL_FW_UPDATE is not set
+    # CONFIG_INTEL_WMI_THUNDERBOLT is not set
 
     #
     # Intel Uncore Frequency Control
@@ -3777,12 +3774,15 @@ in
     # CONFIG_INTEL_TURBO_MAX_3 is not set
     # CONFIG_INTEL_VSEC is not set
     # CONFIG_MSI_LAPTOP is not set
+    # CONFIG_MSI_WMI is not set
     # CONFIG_SAMSUNG_LAPTOP is not set
     # CONFIG_SAMSUNG_Q10 is not set
     # CONFIG_TOSHIBA_BT_RFKILL is not set
     # CONFIG_TOSHIBA_HAPS is not set
+    # CONFIG_TOSHIBA_WMI is not set
     # CONFIG_ACPI_CMPC is not set
     # CONFIG_COMPAL_LAPTOP is not set
+    # CONFIG_LG_LAPTOP is not set
     # CONFIG_PANASONIC_LAPTOP is not set
     # CONFIG_SONY_LAPTOP is not set
     # CONFIG_SYSTEM76_ACPI is not set
@@ -3821,8 +3821,6 @@ in
     CONFIG_MAILBOX=y
     CONFIG_PCC=y
     # CONFIG_ALTERA_MBOX is not set
-    CONFIG_IOMMU_IOVA=y
-    CONFIG_IOMMU_API=y
     CONFIG_IOMMU_SUPPORT=y
 
     #
@@ -3830,14 +3828,9 @@ in
     #
     # end of Generic IOMMU Pagetable Support
 
-    # CONFIG_IOMMU_DEFAULT_DMA_STRICT is not set
-    # CONFIG_IOMMU_DEFAULT_DMA_LAZY is not set
-    CONFIG_IOMMU_DEFAULT_PASSTHROUGH=y
-    CONFIG_IOMMU_DMA=y
     # CONFIG_AMD_IOMMU is not set
     # CONFIG_INTEL_IOMMU is not set
     # CONFIG_IRQ_REMAP is not set
-    CONFIG_VIRTIO_IOMMU=y
 
     #
     # Remoteproc drivers
@@ -4027,7 +4020,7 @@ in
     CONFIG_AUTOFS_FS=y
     CONFIG_FUSE_FS=y
     # CONFIG_CUSE is not set
-    CONFIG_VIRTIO_FS=y
+    # CONFIG_VIRTIO_FS is not set
     # CONFIG_OVERLAY_FS is not set
 
     #
@@ -4420,7 +4413,6 @@ in
     # CONFIG_CRYPTO_DEV_QAT_C3XXXVF is not set
     # CONFIG_CRYPTO_DEV_QAT_C62XVF is not set
     # CONFIG_CRYPTO_DEV_NITROX_CNN55XX is not set
-    # CONFIG_CRYPTO_DEV_VIRTIO is not set
     # CONFIG_CRYPTO_DEV_SAFEXCEL is not set
     # CONFIG_CRYPTO_DEV_AMLOGIC_GXL is not set
     CONFIG_ASYMMETRIC_KEY_TYPE=y
@@ -4527,7 +4519,6 @@ in
     CONFIG_HAS_IOMEM=y
     CONFIG_HAS_IOPORT_MAP=y
     CONFIG_HAS_DMA=y
-    CONFIG_DMA_OPS=y
     CONFIG_NEED_SG_DMA_LENGTH=y
     CONFIG_NEED_DMA_MAP_STATE=y
     CONFIG_ARCH_DMA_ADDR_T_64BIT=y
