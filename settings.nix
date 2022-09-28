@@ -193,7 +193,7 @@ in rec {
         kernelConfig = ./hardware/kernels/5_19.nix;
       };
     in [
-      kernel
+      # kernel
     ];
   };
   localbuildOverrides = override remotebuildOverrides {

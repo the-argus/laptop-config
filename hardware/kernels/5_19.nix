@@ -5,6 +5,12 @@
   ...
 }:
 # kernel config 5.19 xanmod
+# known issues:
+# - touchscreen doesnt work
+# - scrolling on trackpad doesn't work
+# - chromium doesnt own the sandbox binary?? look at this:
+# [2833:2833:0928/182649.401317:FATAL:setuid_sandbox_host.cc(157)] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /nix/store/9zxn1403gpfc0801ya5iambh7dd9l2az-ungoogled-chromium-105.0.5195.127-sandbox/bin/__chromium-suid-sandbox is owned by root and has mode 4755.
+# zsh: trace trap (core dumped)  chromium
 builtins.toFile "kernelconfig" ''
   #
   # Automatically generated file; DO NOT EDIT.
