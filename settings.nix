@@ -187,9 +187,10 @@ in rec {
   unstableOverrides = {
     name = "unstable";
     additionalOverlays = let
-      kernel = import ./hardware/kernel-overlay.nix {
+      kernel = import ./hardware/kernels/lib/kernel-overlay.nix {
         inherit override hostname;
-        basekernelsuffix = "xanmod_latest";
+        baseKernelSuffix = "xanmod_latest";
+        kernelConfig = ./hardware/kernels/5_19.nix;
       };
     in [
       kernel
