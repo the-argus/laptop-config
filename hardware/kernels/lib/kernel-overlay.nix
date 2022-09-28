@@ -1,7 +1,8 @@
 {
   override,
-  basekernelsuffix,
-  hostname,
+  baseKernelSuffix,
+  hostname ? ../5_19_builtin.nix,
+  kernelConfig,
   ...
 }: (self: super: let
   dirVersionNames = {
@@ -10,19 +11,19 @@
     "5_19" = "";
   };
   dirVersionName =
-    if builtins.hasAttr basekernelsuffix dirVersionNames
+    if builtins.hasAttr baseKernelSuffix dirVersionNames
     then
       (
-        if dirVersionNames.${basekernelsuffix} == ""
+        if dirVersionNames.${baseKernelSuffix} == ""
         then ""
-        else "-${dirVersionNames.${basekernelsuffix}}1"
+        else "-${dirVersionNames.${baseKernelSuffix}}1"
       )
-    else basekernelsuffix;
+    else baseKernelSuffix;
   basekernel = "linux${
-    if basekernelsuffix == ""
+    if baseKernelSuffix == ""
     then ""
     else "_"
-  }${basekernelsuffix}";
+  }${baseKernelSuffix}";
   src = super.linuxKernel.kernels.${basekernel}.src;
   version = super.linuxKernel.kernels.${basekernel}.version;
 in {
@@ -34,7 +35,7 @@ in {
           inherit src version;
           modDirVersion = "${version}${dirVersionName}-${super.lib.strings.toUpper hostname}";
           inherit (super) lib;
-          configfile = super.callPackage ./kernelconfig.nix {
+          configfile = super.callPackage kernelConfig {
             inherit hostname;
           };
           allowImportFromDerivation = true;
