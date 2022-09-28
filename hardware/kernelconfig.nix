@@ -12,7 +12,7 @@ in
   builtins.toFile "kernelconfig" ''
     #
     # Automatically generated file; DO NOT EDIT.
-    # Linux/x86 5.19.9 Kernel Configuration
+    # Linux/x86 5.19.11 Kernel Configuration
     #
     CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.3.0"
     CONFIG_CC_IS_GCC=y
@@ -83,6 +83,8 @@ in
     CONFIG_HARDIRQS_SW_RESEND=y
     CONFIG_IRQ_DOMAIN=y
     CONFIG_IRQ_DOMAIN_HIERARCHY=y
+    CONFIG_GENERIC_MSI_IRQ=y
+    CONFIG_GENERIC_MSI_IRQ_DOMAIN=y
     CONFIG_IRQ_MSI_IOMMU=y
     CONFIG_GENERIC_IRQ_MATRIX_ALLOCATOR=y
     CONFIG_GENERIC_IRQ_RESERVATION_MODE=y
@@ -1236,7 +1238,8 @@ in
     # CONFIG_PCIEASPM_POWER_SUPERSAVE is not set
     # CONFIG_PCIEASPM_PERFORMANCE is not set
     # CONFIG_PCIE_PTM is not set
-    # CONFIG_PCI_MSI is not set
+    CONFIG_PCI_MSI=y
+    CONFIG_PCI_MSI_IRQ_DOMAIN=y
     CONFIG_PCI_QUIRKS=y
     # CONFIG_PCI_STUB is not set
     CONFIG_PCI_LOCKLESS_CONFIG=y
@@ -1246,18 +1249,18 @@ in
     CONFIG_PCI_LABEL=y
     CONFIG_VGA_ARB=y
     CONFIG_VGA_ARB_MAX_GPUS=1
-    CONFIG_HOTPLUG_PCI=y
-    # CONFIG_HOTPLUG_PCI_ACPI is not set
-    # CONFIG_HOTPLUG_PCI_CPCI is not set
-    # CONFIG_HOTPLUG_PCI_SHPC is not set
+    # CONFIG_HOTPLUG_PCI is not set
 
     #
     # PCI controller drivers
     #
+    # CONFIG_VMD is not set
 
     #
     # DesignWare PCI Core Support
     #
+    # CONFIG_PCIE_DW_PLAT_HOST is not set
+    # CONFIG_PCI_MESON is not set
     # end of DesignWare PCI Core Support
 
     #
@@ -1495,6 +1498,7 @@ in
     # CONFIG_VMWARE_VMCI is not set
     # CONFIG_GENWQE is not set
     # CONFIG_ECHO is not set
+    # CONFIG_BCM_VK is not set
     # CONFIG_MISC_ALCOR_PCI is not set
     CONFIG_MISC_RTSX_PCI=y
     CONFIG_MISC_RTSX_USB=y
@@ -3665,6 +3669,8 @@ in
     # CONFIG_QCOM_HIDMA is not set
     # CONFIG_DW_DMAC is not set
     # CONFIG_DW_DMAC_PCI is not set
+    # CONFIG_DW_EDMA is not set
+    # CONFIG_DW_EDMA_PCIE is not set
     # CONFIG_SF_PDMA is not set
     # CONFIG_INTEL_LDMA is not set
 
@@ -3726,7 +3732,6 @@ in
     # CONFIG_APPLE_GMUX is not set
     # CONFIG_ASUS_LAPTOP is not set
     # CONFIG_ASUS_WIRELESS is not set
-    # CONFIG_EEEPC_LAPTOP is not set
     CONFIG_X86_PLATFORM_DRIVERS_DELL=y
     CONFIG_DCDBAS=y
     CONFIG_DELL_LAPTOP=m
@@ -3829,6 +3834,8 @@ in
     CONFIG_IOMMU_DEFAULT_PASSTHROUGH=y
     CONFIG_IOMMU_DMA=y
     # CONFIG_AMD_IOMMU is not set
+    # CONFIG_INTEL_IOMMU is not set
+    # CONFIG_IRQ_REMAP is not set
     CONFIG_VIRTIO_IOMMU=y
 
     #
@@ -4411,6 +4418,7 @@ in
     # CONFIG_CRYPTO_DEV_QAT_DH895xCCVF is not set
     # CONFIG_CRYPTO_DEV_QAT_C3XXXVF is not set
     # CONFIG_CRYPTO_DEV_QAT_C62XVF is not set
+    # CONFIG_CRYPTO_DEV_NITROX_CNN55XX is not set
     # CONFIG_CRYPTO_DEV_VIRTIO is not set
     # CONFIG_CRYPTO_DEV_SAFEXCEL is not set
     # CONFIG_CRYPTO_DEV_AMLOGIC_GXL is not set
