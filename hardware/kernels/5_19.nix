@@ -1138,11 +1138,11 @@ builtins.toFile "kernelconfig" ''
 
   # CONFIG_HAMRADIO is not set
   # CONFIG_CAN is not set
-  CONFIG_BT=y
+  CONFIG_BT=m
   CONFIG_BT_BREDR=y
   # CONFIG_BT_RFCOMM is not set
   # CONFIG_BT_BNEP is not set
-  CONFIG_BT_HIDP=y
+  CONFIG_BT_HIDP=m
   CONFIG_BT_HS=y
   CONFIG_BT_LE=y
   CONFIG_BT_LEDS=y
@@ -1313,9 +1313,7 @@ builtins.toFile "kernelconfig" ''
   CONFIG_FW_LOADER=y
   CONFIG_FW_LOADER_PAGED_BUF=y
   CONFIG_FW_LOADER_SYSFS=y
-  CONFIG_EXTRA_FIRMWARE="regulatory.db.xz i915/tgl_dmc_ver2_12.bin.xz iwlwifi-QuZ-a0-hr-b0-71.ucode.xz"
-  # CONFIG_EXTRA_FIRMWARE_DIR="$\{firmware}/lib/firmware"
-  CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"
+  CONFIG_EXTRA_FIRMWARE=""
   CONFIG_FW_LOADER_USER_HELPER=y
   # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
   CONFIG_FW_LOADER_COMPRESS=y
@@ -1729,15 +1727,18 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_EQUALIZER is not set
   # CONFIG_NET_FC is not set
   # CONFIG_NET_TEAM is not set
-  # CONFIG_MACVLAN is not set
-  # CONFIG_IPVLAN is not set
+  CONFIG_MACVLAN=y
+  CONFIG_MACVTAP=m
+  CONFIG_IPVLAN=m
+  CONFIG_IPVTAP=m
   # CONFIG_VXLAN is not set
   # CONFIG_GENEVE is not set
   # CONFIG_BAREUDP is not set
   # CONFIG_GTP is not set
   # CONFIG_MACSEC is not set
   # CONFIG_NETCONSOLE is not set
-  # CONFIG_TUN is not set
+  CONFIG_TUN=y
+  CONFIG_TAP=m
   # CONFIG_TUN_VNET_CROSS_LE is not set
   # CONFIG_VETH is not set
   # CONFIG_NLMON is not set
@@ -1777,10 +1778,11 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_IPW2200 is not set
   # CONFIG_IWL4965 is not set
   # CONFIG_IWL3945 is not set
-  CONFIG_IWLWIFI=y
+  CONFIG_IWLWIFI=m
   CONFIG_IWLWIFI_LEDS=y
-  CONFIG_IWLDVM=y
-  CONFIG_IWLMVM=y
+  CONFIG_IWLDVM=m
+  CONFIG_IWLMVM=m
+  CONFIG_IWLWIFI_OPMODE_MODULAR=y
 
   #
   # Debugging Options
@@ -3681,10 +3683,10 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_VIRT_DRIVERS is not set
   # CONFIG_VIRTIO_MENU is not set
   # CONFIG_VDPA is not set
-  CONFIG_VHOST_IOTLB=y
-  CONFIG_VHOST=y
+  CONFIG_VHOST_IOTLB=m
+  CONFIG_VHOST=m
   CONFIG_VHOST_MENU=y
-  CONFIG_VHOST_NET=y
+  CONFIG_VHOST_NET=m
   # CONFIG_VHOST_CROSS_ENDIAN_LEGACY is not set
 
   #
