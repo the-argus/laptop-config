@@ -832,7 +832,6 @@ builtins.toFile "kernelconfig" ''
 
   CONFIG_BLOCK_COMPAT=y
   CONFIG_BLK_MQ_PCI=y
-  CONFIG_BLK_MQ_VIRTIO=y
   CONFIG_BLK_PM=y
   CONFIG_BLOCK_HOLDER_DEPRECATED=y
   CONFIG_BLK_MQ_STACKING=y
@@ -1179,7 +1178,6 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_BT_MRVL is not set
   # CONFIG_BT_ATH3K is not set
   # CONFIG_BT_MTKSDIO is not set
-  # CONFIG_BT_VIRTIO is not set
   # end of Bluetooth device drivers
 
   # CONFIG_AF_RXRPC is not set
@@ -1366,7 +1364,6 @@ builtins.toFile "kernelconfig" ''
   CONFIG_DMIID=y
   # CONFIG_DMI_SYSFS is not set
   CONFIG_DMI_SCAN_MACHINE_NON_EFI_FALLBACK=y
-  # CONFIG_ISCSI_IBFT is not set
   # CONFIG_FW_CFG_SYSFS is not set
   CONFIG_SYSFB=y
   # CONFIG_SYSFB_SIMPLEFB is not set
@@ -1426,7 +1423,6 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_BLK_DEV_RAM is not set
   # CONFIG_CDROM_PKTCDVD is not set
   # CONFIG_ATA_OVER_ETH is not set
-  CONFIG_VIRTIO_BLK=y
   # CONFIG_BLK_DEV_RBD is not set
 
   #
@@ -1538,59 +1534,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_SCSI_SRP_ATTRS is not set
   # end of SCSI Transports
 
-  CONFIG_SCSI_LOWLEVEL=y
-  # CONFIG_ISCSI_TCP is not set
-  # CONFIG_ISCSI_BOOT_SYSFS is not set
-  # CONFIG_SCSI_CXGB3_ISCSI is not set
-  # CONFIG_SCSI_BNX2_ISCSI is not set
-  # CONFIG_BE2ISCSI is not set
-  # CONFIG_BLK_DEV_3W_XXXX_RAID is not set
-  # CONFIG_SCSI_HPSA is not set
-  # CONFIG_SCSI_3W_9XXX is not set
-  # CONFIG_SCSI_3W_SAS is not set
-  # CONFIG_SCSI_ACARD is not set
-  # CONFIG_SCSI_AACRAID is not set
-  # CONFIG_SCSI_AIC7XXX is not set
-  # CONFIG_SCSI_AIC79XX is not set
-  # CONFIG_SCSI_AIC94XX is not set
-  # CONFIG_SCSI_MVSAS is not set
-  # CONFIG_SCSI_MVUMI is not set
-  # CONFIG_SCSI_DPT_I2O is not set
-  # CONFIG_SCSI_ADVANSYS is not set
-  # CONFIG_SCSI_ARCMSR is not set
-  # CONFIG_SCSI_ESAS2R is not set
-  # CONFIG_MEGARAID_NEWGEN is not set
-  # CONFIG_MEGARAID_LEGACY is not set
-  # CONFIG_MEGARAID_SAS is not set
-  # CONFIG_SCSI_MPT3SAS is not set
-  # CONFIG_SCSI_MPT2SAS is not set
-  # CONFIG_SCSI_MPI3MR is not set
-  # CONFIG_SCSI_SMARTPQI is not set
-  # CONFIG_SCSI_HPTIOP is not set
-  # CONFIG_SCSI_BUSLOGIC is not set
-  # CONFIG_SCSI_MYRB is not set
-  # CONFIG_SCSI_MYRS is not set
-  # CONFIG_VMWARE_PVSCSI is not set
-  # CONFIG_SCSI_SNIC is not set
-  # CONFIG_SCSI_DMX3191D is not set
-  # CONFIG_SCSI_FDOMAIN_PCI is not set
-  # CONFIG_SCSI_ISCI is not set
-  # CONFIG_SCSI_IPS is not set
-  # CONFIG_SCSI_INITIO is not set
-  # CONFIG_SCSI_INIA100 is not set
-  # CONFIG_SCSI_STEX is not set
-  # CONFIG_SCSI_SYM53C8XX_2 is not set
-  # CONFIG_SCSI_IPR is not set
-  # CONFIG_SCSI_QLOGIC_1280 is not set
-  # CONFIG_SCSI_QLA_ISCSI is not set
-  # CONFIG_SCSI_DC395x is not set
-  # CONFIG_SCSI_AM53C974 is not set
-  # CONFIG_SCSI_WD719X is not set
-  # CONFIG_SCSI_DEBUG is not set
-  # CONFIG_SCSI_PMCRAID is not set
-  # CONFIG_SCSI_PM8001 is not set
-  CONFIG_SCSI_VIRTIO=y
-  # CONFIG_SCSI_LOWLEVEL_PCMCIA is not set
+  # CONFIG_SCSI_LOWLEVEL is not set
   # CONFIG_SCSI_DH is not set
   # end of SCSI device support
 
@@ -1751,7 +1695,6 @@ builtins.toFile "kernelconfig" ''
   CONFIG_TAP=m
   # CONFIG_TUN_VNET_CROSS_LE is not set
   # CONFIG_VETH is not set
-  CONFIG_VIRTIO_NET=y
   # CONFIG_NLMON is not set
   # CONFIG_ARCNET is not set
   # CONFIG_ETHERNET is not set
@@ -2018,9 +1961,8 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_N_GSM is not set
   # CONFIG_NOZOMI is not set
   # CONFIG_NULL_TTY is not set
-  CONFIG_HVC_DRIVER=y
   # CONFIG_SERIAL_DEV_BUS is not set
-  CONFIG_VIRTIO_CONSOLE=y
+  # CONFIG_VIRTIO_CONSOLE is not set
   # CONFIG_IPMI_HANDLER is not set
   # CONFIG_HW_RANDOM is not set
   # CONFIG_APPLICOM is not set
@@ -2812,7 +2754,6 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_DRM_AST is not set
   # CONFIG_DRM_MGAG200 is not set
   # CONFIG_DRM_QXL is not set
-  # CONFIG_DRM_VIRTIO_GPU is not set
   CONFIG_DRM_PANEL=y
 
   #
@@ -3100,7 +3041,6 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_SND_PCMCIA is not set
   # CONFIG_SND_SOC is not set
   # CONFIG_SND_X86 is not set
-  # CONFIG_SND_VIRTIO is not set
 
   #
   # HID support
@@ -3695,15 +3635,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_VFIO is not set
   CONFIG_IRQ_BYPASS_MANAGER=y
   # CONFIG_VIRT_DRIVERS is not set
-  CONFIG_VIRTIO_ANCHOR=y
-  CONFIG_VIRTIO=y
-  CONFIG_VIRTIO_PCI_LIB=y
-  CONFIG_VIRTIO_MENU=y
-  CONFIG_VIRTIO_PCI=y
-  # CONFIG_VIRTIO_PCI_LEGACY is not set
-  # CONFIG_VIRTIO_BALLOON is not set
-  # CONFIG_VIRTIO_INPUT is not set
-  # CONFIG_VIRTIO_MMIO is not set
+  # CONFIG_VIRTIO_MENU is not set
   # CONFIG_VDPA is not set
   CONFIG_VHOST_IOTLB=m
   CONFIG_VHOST=m
@@ -3852,7 +3784,6 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_AMD_IOMMU is not set
   # CONFIG_INTEL_IOMMU is not set
   # CONFIG_IRQ_REMAP is not set
-  # CONFIG_VIRTIO_IOMMU is not set
 
   #
   # Remoteproc drivers
@@ -4435,7 +4366,6 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_CRYPTO_DEV_QAT_C3XXXVF is not set
   # CONFIG_CRYPTO_DEV_QAT_C62XVF is not set
   # CONFIG_CRYPTO_DEV_NITROX_CNN55XX is not set
-  # CONFIG_CRYPTO_DEV_VIRTIO is not set
   # CONFIG_CRYPTO_DEV_SAFEXCEL is not set
   # CONFIG_CRYPTO_DEV_AMLOGIC_GXL is not set
   CONFIG_ASYMMETRIC_KEY_TYPE=y
