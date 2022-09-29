@@ -21,20 +21,12 @@
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [
-    "virtio_net"
-    "virtio_pci"
-    "virtio_blk"
-    "virtio_scsi"
-    # "virtio_mmio"
-    # "virtio_balloon"
-    # "virtio_console"
-  ];
+  boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/444dd843-a3b1-4e59-9d47-c62cfab94d8b";
+    device = "/dev/disk/by-label/NIXROOT";
     fsType = "ext4";
   };
 
@@ -44,11 +36,11 @@
   };
 
   fileSystems."/efi" = {
-    device = "/dev/disk/by-uuid/F230-06EA";
+    device = "/dev/disk/by-label/WINBOOT";
     fsType = "vfat";
   };
 
-  swapDevices = [{device = "/dev/disk/by-uuid/0d554a74-2d3c-4bd4-a5db-1fc7062485f9";}];
+  swapDevices = [{device = "/dev/disk/by-label/SWAP";}];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
