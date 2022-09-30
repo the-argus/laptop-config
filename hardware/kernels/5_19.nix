@@ -956,6 +956,8 @@ builtins.toFile "kernelconfig" ''
   # end of Memory Management options
 
   CONFIG_NET=y
+  CONFIG_NET_INGRESS=y
+  CONFIG_NET_EGRESS=y
   CONFIG_SKB_EXTENSIONS=y
 
   #
@@ -1022,6 +1024,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_INET6_ESP is not set
   # CONFIG_INET6_IPCOMP is not set
   # CONFIG_IPV6_MIP6 is not set
+  # CONFIG_IPV6_ILA is not set
   # CONFIG_IPV6_VTI is not set
   CONFIG_IPV6_SIT=m
   # CONFIG_IPV6_SIT_6RD is not set
@@ -1036,7 +1039,74 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_MPTCP is not set
   # CONFIG_NETWORK_SECMARK is not set
   # CONFIG_NETWORK_PHY_TIMESTAMPING is not set
-  # CONFIG_NETFILTER is not set
+  CONFIG_NETFILTER=y
+  CONFIG_NETFILTER_ADVANCED=y
+
+  #
+  # Core Netfilter Configuration
+  #
+  CONFIG_NETFILTER_INGRESS=y
+  CONFIG_NETFILTER_EGRESS=y
+  CONFIG_NETFILTER_NETLINK=y
+  # CONFIG_NETFILTER_NETLINK_HOOK is not set
+  # CONFIG_NETFILTER_NETLINK_ACCT is not set
+  # CONFIG_NETFILTER_NETLINK_QUEUE is not set
+  # CONFIG_NETFILTER_NETLINK_LOG is not set
+  # CONFIG_NETFILTER_NETLINK_OSF is not set
+  # CONFIG_NF_CONNTRACK is not set
+  # CONFIG_NF_LOG_SYSLOG is not set
+  CONFIG_NF_TABLES=y
+  # CONFIG_NF_TABLES_INET is not set
+  # CONFIG_NF_TABLES_NETDEV is not set
+  # CONFIG_NFT_NUMGEN is not set
+  # CONFIG_NFT_LOG is not set
+  # CONFIG_NFT_LIMIT is not set
+  # CONFIG_NFT_TUNNEL is not set
+  # CONFIG_NFT_OBJREF is not set
+  # CONFIG_NFT_QUOTA is not set
+  # CONFIG_NFT_REJECT is not set
+  # CONFIG_NFT_HASH is not set
+  # CONFIG_NFT_XFRM is not set
+  # CONFIG_NFT_SOCKET is not set
+  # CONFIG_NFT_OSF is not set
+  # CONFIG_NFT_TPROXY is not set
+  # CONFIG_NETFILTER_XTABLES is not set
+  # end of Core Netfilter Configuration
+
+  # CONFIG_IP_SET is not set
+  # CONFIG_IP_VS is not set
+
+  #
+  # IP: Netfilter Configuration
+  #
+  # CONFIG_NF_SOCKET_IPV4 is not set
+  # CONFIG_NF_TPROXY_IPV4 is not set
+  CONFIG_NF_TABLES_IPV4=y
+  # CONFIG_NFT_DUP_IPV4 is not set
+  # CONFIG_NFT_FIB_IPV4 is not set
+  # CONFIG_NF_TABLES_ARP is not set
+  # CONFIG_NF_DUP_IPV4 is not set
+  # CONFIG_NF_LOG_ARP is not set
+  # CONFIG_NF_LOG_IPV4 is not set
+  # CONFIG_NF_REJECT_IPV4 is not set
+  # CONFIG_IP_NF_IPTABLES is not set
+  # CONFIG_IP_NF_ARPTABLES is not set
+  # end of IP: Netfilter Configuration
+
+  #
+  # IPv6: Netfilter Configuration
+  #
+  # CONFIG_NF_SOCKET_IPV6 is not set
+  # CONFIG_NF_TPROXY_IPV6 is not set
+  CONFIG_NF_TABLES_IPV6=y
+  # CONFIG_NFT_DUP_IPV6 is not set
+  # CONFIG_NFT_FIB_IPV6 is not set
+  # CONFIG_NF_DUP_IPV6 is not set
+  # CONFIG_NF_REJECT_IPV6 is not set
+  # CONFIG_NF_LOG_IPV6 is not set
+  # CONFIG_IP6_NF_IPTABLES is not set
+  # end of IPv6: Netfilter Configuration
+
   # CONFIG_BPFILTER is not set
   # CONFIG_IP_DCCP is not set
   # CONFIG_IP_SCTP is not set
@@ -1121,7 +1191,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_NET_NSH is not set
   # CONFIG_HSR is not set
   # CONFIG_NET_SWITCHDEV is not set
-  # CONFIG_NET_L3_MASTER_DEV is not set
+  CONFIG_NET_L3_MASTER_DEV=y
   # CONFIG_QRTR is not set
   # CONFIG_NET_NCSI is not set
   CONFIG_PCPU_DEV_REFCNT=y
@@ -1403,7 +1473,7 @@ builtins.toFile "kernelconfig" ''
   CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
   # CONFIG_PARPORT is not set
   CONFIG_PNP=y
-  CONFIG_PNP_DEBUG_MESSAGES=y
+  # CONFIG_PNP_DEBUG_MESSAGES is not set
 
   #
   # Protocols
@@ -1683,6 +1753,7 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_NET_TEAM is not set
   CONFIG_MACVLAN=y
   CONFIG_MACVTAP=m
+  CONFIG_IPVLAN_L3S=y
   CONFIG_IPVLAN=m
   CONFIG_IPVTAP=m
   # CONFIG_VXLAN is not set
