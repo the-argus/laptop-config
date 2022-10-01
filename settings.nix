@@ -1,6 +1,5 @@
 {
   this,
-  audio-plugins,
   nixpkgs,
   nixpkgs-unstable,
   master-config,

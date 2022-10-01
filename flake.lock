@@ -69,36 +69,16 @@
     "audio-plugins": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1663031784,
-        "narHash": "sha256-fCJYz1STMiZj4kKJS3Bey1v5Hv1ax9LbBxVs655k3MM=",
-        "owner": "the-argus",
-        "repo": "audio-plugins-nix",
-        "rev": "872dfa5b5f2fe2be4f34cdc1cee8b5b6f0038de7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "the-argus",
-        "repo": "audio-plugins-nix",
-        "type": "github"
-      }
-    },
-    "audio-plugins_2": {
-      "inputs": {
-        "nixpkgs": [
           "master-config",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1663031784,
-        "narHash": "sha256-fCJYz1STMiZj4kKJS3Bey1v5Hv1ax9LbBxVs655k3MM=",
+        "lastModified": 1664662515,
+        "narHash": "sha256-UhpL27Os097HdLaqUQDW4OG3TIKEGYBimPCdEi5BgvI=",
         "owner": "the-argus",
         "repo": "audio-plugins-nix",
-        "rev": "872dfa5b5f2fe2be4f34cdc1cee8b5b6f0038de7",
+        "rev": "4a67e1eb2694e3a89b59053fe4518b2a112bef3c",
         "type": "github"
       },
       "original": {
@@ -489,7 +469,7 @@
     "master-config": {
       "inputs": {
         "arkenfox-userjs": "arkenfox-userjs",
-        "audio-plugins": "audio-plugins_2",
+        "audio-plugins": "audio-plugins",
         "chrome-extensions": "chrome-extensions",
         "gtk-nix": "gtk-nix",
         "home-manager": "home-manager",
@@ -506,11 +486,11 @@
         "webcord": "webcord"
       },
       "locked": {
-        "lastModified": 1664662168,
-        "narHash": "sha256-AvVcsZUl29b90eiP/AvgoqbLllMBCSIzoZa2ZLJcISQ=",
+        "lastModified": 1664662532,
+        "narHash": "sha256-RnaWAXnCJqlJsXtiA6oYRmH1jCDJLW5XURQGRGF6J8Q=",
         "owner": "the-argus",
         "repo": "nixsys",
-        "rev": "55ca3dc9442f9970bdc79a4330e391baa41bf854",
+        "rev": "b72a3caa7ce6b3a652dcf0501920f3958aea8a5c",
         "type": "github"
       },
       "original": {
@@ -697,7 +677,6 @@
     },
     "root": {
       "inputs": {
-        "audio-plugins": "audio-plugins",
         "master-config": "master-config",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable"

@@ -3,11 +3,6 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-22.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    audio-plugins = {
-      url = "github:the-argus/audio-plugins-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     master-config = {
       url = "github:the-argus/nixsys";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +14,6 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
-    audio-plugins,
     master-config,
   } @ inputs: let
     supportedSystems = [
@@ -28,7 +22,7 @@
     ];
     genSystems = nixpkgs.lib.genAttrs supportedSystems;
     settings = import ./settings.nix {
-      inherit audio-plugins nixpkgs nixpkgs-unstable master-config;
+      inherit nixpkgs nixpkgs-unstable master-config;
       this = self;
     };
   in {
