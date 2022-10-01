@@ -31,7 +31,7 @@
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/3b8082af-c41c-4b45-b4f4-5ece2a003373";
+    device = "/dev/disk/by-label/NIXHOME";
     fsType = "btrfs";
   };
 
