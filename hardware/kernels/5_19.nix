@@ -2011,7 +2011,7 @@ builtins.toFile "kernelconfig" ''
   CONFIG_SERIO_I8042=y
   CONFIG_SERIO_SERPORT=y
   # CONFIG_SERIO_CT82C710 is not set
-  # CONFIG_SERIO_PCIPS2 is not set
+  CONFIG_SERIO_PCIPS2=m
   CONFIG_SERIO_LIBPS2=y
   # CONFIG_SERIO_RAW is not set
   # CONFIG_SERIO_ALTERA_PS2 is not set
