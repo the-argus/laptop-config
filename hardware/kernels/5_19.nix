@@ -1214,11 +1214,11 @@ builtins.toFile "kernelconfig" ''
 
   # CONFIG_HAMRADIO is not set
   # CONFIG_CAN is not set
-  CONFIG_BT=y
+  CONFIG_BT=m
   CONFIG_BT_BREDR=y
   # CONFIG_BT_RFCOMM is not set
   # CONFIG_BT_BNEP is not set
-  CONFIG_BT_HIDP=y
+  CONFIG_BT_HIDP=m
   CONFIG_BT_HS=y
   CONFIG_BT_LE=y
   CONFIG_BT_LEDS=y
@@ -1229,16 +1229,16 @@ builtins.toFile "kernelconfig" ''
   #
   # Bluetooth device drivers
   #
-  CONFIG_BT_INTEL=y
-  CONFIG_BT_RTL=y
-  CONFIG_BT_HCIBTUSB=y
+  CONFIG_BT_INTEL=m
+  CONFIG_BT_RTL=m
+  CONFIG_BT_HCIBTUSB=m
   # CONFIG_BT_HCIBTUSB_AUTOSUSPEND is not set
   # CONFIG_BT_HCIBTUSB_BCM is not set
   # CONFIG_BT_HCIBTUSB_MTK is not set
   CONFIG_BT_HCIBTUSB_RTL=y
   # CONFIG_BT_HCIBTSDIO is not set
   # CONFIG_BT_HCIUART is not set
-  CONFIG_BT_HCIBCM203X=y
+  CONFIG_BT_HCIBCM203X=m
   # CONFIG_BT_HCIBPA10X is not set
   # CONFIG_BT_HCIBFUSB is not set
   # CONFIG_BT_HCIDTL1 is not set
@@ -2355,6 +2355,8 @@ builtins.toFile "kernelconfig" ''
   #
   # CONFIG_SENSORS_ACPI_POWER is not set
   # CONFIG_SENSORS_ATK0110 is not set
+  # CONFIG_SENSORS_ASUS_WMI is not set
+  # CONFIG_SENSORS_ASUS_WMI_EC is not set
   # CONFIG_SENSORS_ASUS_EC is not set
   CONFIG_THERMAL=y
   # CONFIG_THERMAL_NETLINK is not set
@@ -3712,9 +3714,18 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_COMEDI is not set
   # CONFIG_STAGING is not set
   CONFIG_X86_PLATFORM_DEVICES=y
-  # CONFIG_ACPI_WMI is not set
+  CONFIG_ACPI_WMI=y
+  # CONFIG_WMI_BMOF is not set
+  # CONFIG_HUAWEI_WMI is not set
+  # CONFIG_MXM_WMI is not set
+  # CONFIG_PEAQ_WMI is not set
+  # CONFIG_NVIDIA_WMI_EC_BACKLIGHT is not set
+  # CONFIG_XIAOMI_WMI is not set
+  # CONFIG_GIGABYTE_WMI is not set
+  # CONFIG_YOGABOOK_WMI is not set
   # CONFIG_ACERHDF is not set
   # CONFIG_ACER_WIRELESS is not set
+  # CONFIG_ACER_WMI is not set
   # CONFIG_AMD_PMC is not set
   # CONFIG_AMD_HSMP is not set
   # CONFIG_ADV_SWBUTTON is not set
@@ -3722,22 +3733,31 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_ASUS_LAPTOP is not set
   # CONFIG_ASUS_WIRELESS is not set
   CONFIG_X86_PLATFORM_DRIVERS_DELL=y
+  # CONFIG_ALIENWARE_WMI is not set
   # CONFIG_DCDBAS is not set
   CONFIG_DELL_LAPTOP=y
   CONFIG_DELL_RBU=y
   CONFIG_DELL_RBTN=y
   CONFIG_DELL_SMBIOS=y
+  CONFIG_DELL_SMBIOS_WMI=y
   # CONFIG_DELL_SMO8800 is not set
+  # CONFIG_DELL_WMI is not set
+  # CONFIG_DELL_WMI_AIO is not set
+  CONFIG_DELL_WMI_DESCRIPTOR=y
+  # CONFIG_DELL_WMI_LED is not set
+  # CONFIG_DELL_WMI_SYSMAN is not set
   # CONFIG_AMILO_RFKILL is not set
   # CONFIG_FUJITSU_LAPTOP is not set
   # CONFIG_FUJITSU_TABLET is not set
   # CONFIG_GPD_POCKET_FAN is not set
   # CONFIG_HP_ACCEL is not set
   # CONFIG_WIRELESS_HOTKEY is not set
+  # CONFIG_HP_WMI is not set
   # CONFIG_IBM_RTL is not set
   # CONFIG_IDEAPAD_LAPTOP is not set
   # CONFIG_SENSORS_HDAPS is not set
   # CONFIG_THINKPAD_ACPI is not set
+  # CONFIG_THINKPAD_LMI is not set
   # CONFIG_INTEL_ATOMISP2_PM is not set
   # CONFIG_INTEL_SAR_INT1092 is not set
   # CONFIG_INTEL_PMC_CORE is not set
@@ -3747,6 +3767,9 @@ builtins.toFile "kernelconfig" ''
   #
   # CONFIG_INTEL_SPEED_SELECT_INTERFACE is not set
   # end of Intel Speed Select Technology interface support
+
+  # CONFIG_INTEL_WMI_SBL_FW_UPDATE is not set
+  # CONFIG_INTEL_WMI_THUNDERBOLT is not set
 
   #
   # Intel Uncore Frequency Control
@@ -3764,12 +3787,15 @@ builtins.toFile "kernelconfig" ''
   # CONFIG_INTEL_TURBO_MAX_3 is not set
   # CONFIG_INTEL_VSEC is not set
   # CONFIG_MSI_LAPTOP is not set
+  # CONFIG_MSI_WMI is not set
   # CONFIG_SAMSUNG_LAPTOP is not set
   # CONFIG_SAMSUNG_Q10 is not set
   # CONFIG_TOSHIBA_BT_RFKILL is not set
   # CONFIG_TOSHIBA_HAPS is not set
+  # CONFIG_TOSHIBA_WMI is not set
   # CONFIG_ACPI_CMPC is not set
   # CONFIG_COMPAL_LAPTOP is not set
+  # CONFIG_LG_LAPTOP is not set
   # CONFIG_PANASONIC_LAPTOP is not set
   # CONFIG_SONY_LAPTOP is not set
   # CONFIG_SYSTEM76_ACPI is not set
