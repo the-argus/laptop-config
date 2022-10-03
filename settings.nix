@@ -8,6 +8,7 @@
   override = nixpkgs.lib.attrsets.recursiveUpdate;
 in rec {
   # theme = "nordicWithGtkNix";
+  # theme = "drifter";
   system = "x86_64-linux";
   username = "argus";
   hostname = "evil";
