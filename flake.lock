@@ -484,11 +484,11 @@
         "webcord": "webcord"
       },
       "locked": {
-        "lastModified": 1664948980,
-        "narHash": "sha256-hlN20IIWPklJd5TZHOEo2aey/BnIXMcSzzo30DepPxA=",
+        "lastModified": 1664988546,
+        "narHash": "sha256-kPcKKuWEmZxwtewPRpTDFxzLJYKBnkoO/s4Ybw9bGpQ=",
         "owner": "the-argus",
         "repo": "nixsys",
-        "rev": "856ab263df09c360ed81dd8efff9b6ef1e66bffe",
+        "rev": "9d74b8daeee8c431943b1b6623dfeff3e743cf73",
         "type": "github"
       },
       "original": {
@@ -567,16 +567,16 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1664790708,
-        "narHash": "sha256-fzxmpOPjzOVIt9KeDN4EDPI13xJn+u0uMxheKCWken8=",
-        "owner": "nixos",
+        "lastModified": 1664988383,
+        "narHash": "sha256-9+svMh2gQP4EmNmAH5+qqgJVInNpRkQfWU4g3+i40vc=",
+        "owner": "the-argus",
         "repo": "nixpkgs",
-        "rev": "81a3237b64e67b66901c735654017e75f0c50943",
+        "rev": "49c4a6d6021a29e862383bf678d34fba7def9a83",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-22.05",
+        "owner": "the-argus",
+        "ref": "feat/mkdefault-etc-issue",
         "repo": "nixpkgs",
         "type": "github"
       }

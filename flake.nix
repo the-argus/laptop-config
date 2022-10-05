@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-22.05";
+    nixpkgs.url = "github:the-argus/nixpkgs?ref=feat/mkdefault-etc-issue";
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     master-config = {
