@@ -13,10 +13,6 @@
     ./hardware-configuration.nix
   ];
 
-  environment.etc.issue.source = pkgs.writeText "issue" ''
-    whaaaa testing
-  '';
-
   # dual booting with windows boot loader mounted on /efi
   boot = {
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
