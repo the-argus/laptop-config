@@ -120,6 +120,7 @@ in rec {
     "godot"
     "godot-export-templates"
     "python310Packages.gdtoolkit"
+    "distrobox"
     # {
     #   set = "unstable";
     #   package = "ue4";
