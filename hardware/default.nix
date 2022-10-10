@@ -73,20 +73,36 @@
   #     testing..
   #   '';
   # };
-  environment.etc."containers/policy.json" = {
-    source = pkgs.writeText "policy.json" (builtins.toJSON {
-      default = [
-        {type = "insecureAcceptAnything";}
-      ];
-      transports = {
-        docker-daemon = {
-          "" = [
-            {type = "insecureAcceptAnything";}
-          ];
-        };
-      };
-    });
+  
+  # podman
+  users.extraUsers.${username} = {
+    subUidRanges = [
+      {
+        startUid = 100000;
+        count = 65536;
+      }
+    ];
+    subGidRanges = [
+      {
+        startGid = 100000;
+        count = 65536;
+      }
+    ];
   };
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.dnsname.enable = true;
+
+      extraPackages = [pkgs.podman-compose];
+    };
+  };
+
   services.greetd = {
     enable = false;
     settings = {
