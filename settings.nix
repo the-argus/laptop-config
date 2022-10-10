@@ -121,6 +121,7 @@ in rec {
     "godot-export-templates"
     "python310Packages.gdtoolkit"
     "distrobox"
+    "podman"
     # {
     #   set = "unstable";
     #   package = "ue4";

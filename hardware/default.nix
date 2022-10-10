@@ -12,7 +12,7 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  
+
   time.timeZone = "America/Chicago";
 
   # dual booting with windows boot loader mounted on /efi
@@ -73,6 +73,20 @@
   #     testing..
   #   '';
   # };
+  environment.etc."containers/policy.json" = {
+    source = pkgs.writeText "policy.json" (builtins.toJSON {
+      default = [
+        {type = "insecureAcceptAnything";}
+      ];
+      transports = {
+        docker-daemon = {
+          "" = [
+            {type = "insecureAcceptAnything";}
+          ];
+        };
+      };
+    });
+  };
   services.greetd = {
     enable = false;
     settings = {
