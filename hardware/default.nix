@@ -12,6 +12,8 @@
   imports = [
     ./hardware-configuration.nix
   ];
+  
+  time.timeZone = "America/Chicago";
 
   # dual booting with windows boot loader mounted on /efi
   boot = {
