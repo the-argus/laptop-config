@@ -7,13 +7,14 @@
 }: let
   override = nixpkgs.lib.attrsets.recursiveUpdate;
 in rec {
-  # theme = "nordicWithGtkNix";
-  #theme = "drifter";
-  theme = "gruvbox";
+  theme = "nordicWithGtkNix";
+  # theme = "drifter";
+  # theme = "gruvbox";
   system = "x86_64-linux";
   username = "argus";
   hostname = "evil";
   terminal = "kitty";
+  useDvorak = false;
   # unfree packages that i explicitly use
   allowedUnfree = [
     "spotify-unwrapped"
