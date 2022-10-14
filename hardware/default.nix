@@ -66,7 +66,6 @@
       docker.enable = true;
       podman.enable = true;
     };
-    passthrough.enable = true;
   };
 
   # choose display manager
