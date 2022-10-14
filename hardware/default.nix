@@ -59,6 +59,16 @@
     gnome.enable = true;
     # plasma.enable = true;
   };
+
+  virtualization = {
+    enable = true;
+    containers = {
+      docker.enable = true;
+      podman.enable = true;
+    };
+    passthrough.enable = true;
+  };
+
   # choose display manager
   # services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager.startx.enable = true;
