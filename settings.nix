@@ -61,6 +61,9 @@ in rec {
       "zsh"
       "zplug"
       "kitty"
+      "neovim"
+      "kitty"
+      "starship"
     ];
     # packages to build remotely
     remotebuild = let
@@ -73,45 +76,6 @@ in rec {
       "grub"
       "plymouth"
       "coreutils-full"
-
-      # "qtile"
-      # "neovim"
-      # "bash" # cannot be overriden because the stdenv depends on it
-      # "systemd"
-      # this causes system breakages
-      # "zsh" "zplug"
-      # none of these work (ie they dont apply, these packages wont build
-      # from source like this
-      # "kitty"
-      # "starship"
-      # build xorg from source
-      # "xorg"
-      # ]
-      # ++ map mkXorg [
-      #   "xrandr"
-      #   "xrdb"
-      #   "setxkbmap"
-      #   "iceauth"
-      #   "xlsclients"
-      #   "xset"
-      #   "xsetroot"
-      #   "xinput"
-      #   "xprop"
-      #   "xauth"
-      #   "xterm"
-      #   "xdg-utils"
-      # ]
-      # ++ [
-      #   {
-      #     set1 = "xorg";
-      #     set2 = "xorgserver";
-      #     set3 = "out";
-      #   }
-      #   {
-      #     set1 = "xorg";
-      #     set2 = "xf86inputevdev";
-      #     set3 = "out";
-      #   }
     ];
   };
 
@@ -122,6 +86,7 @@ in rec {
     "godot-export-templates"
     "python310Packages.gdtoolkit"
     "aseprite"
+    "cool-retro-term"
     # {
     #   set = "unstable";
     #   package = "ue4";
