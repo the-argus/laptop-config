@@ -51,7 +51,7 @@
   # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
   desktops = {
     enable = true;
-    # sway.enable = true;
+    sway.enable = true;
     # awesome.enable = true;
     # ratpoison.enable = true;
     qtile.enable = true;
