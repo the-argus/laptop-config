@@ -60,8 +60,7 @@ in rec {
       "qtile"
       "zsh"
       "zplug"
-      "kitty"
-      "neovim"
+      # "neovim" I want to build from source but its in unstable
       "kitty"
       "starship"
     ];
