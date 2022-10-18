@@ -86,6 +86,7 @@ in rec {
     "python310Packages.gdtoolkit"
     "aseprite"
     "cool-retro-term"
+    "cage"
     # {
     #   set = "unstable";
     #   package = "ue4";
