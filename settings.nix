@@ -32,7 +32,7 @@ in rec {
   };
   extraExtraSpecialArgs = {};
   extraSpecialArgs = {};
-  additionalModules = [];
+  additionalModules = [./shared];
   additionalOverlays = [];
   packageSelections = {
     # packages to override with their unstable versions
@@ -87,12 +87,14 @@ in rec {
     "aseprite"
     "cool-retro-term"
     "cage"
+    "screen"
+    "fbterm"
     # {
     #   set = "unstable";
     #   package = "ue4";
     # }
   ]; # will be evaluated later
-  hardwareConfiguration = [./hardware];
+  hardwareConfiguration = [./hardware ./shared];
   usesWireless = true; # install and autostart nm-applet
   usesBluetooth = true; # install and autostart blueman applet
   usesMouse = false; # enables xmousepasteblock for middle click

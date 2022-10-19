@@ -7,6 +7,7 @@
       url = "github:the-argus/nixsys";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
+      inputs.banner.url = "github:the-argus/banner.nix";
     };
   };
 

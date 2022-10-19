@@ -45,20 +45,9 @@
       theme = plymouth.themeName;
     };
   };
-
+  
   # makes plymouth wait 5 seconds while playing
   # systemd.services.plymouth-quit.serviceConfig.ExecStartPre = "${pkgs.coreutils-full}/bin/sleep 5";
-  # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
-  desktops = {
-    enable = true;
-    sway.enable = true;
-    # awesome.enable = true;
-    # ratpoison.enable = true;
-    qtile.enable = true;
-    i3gaps.enable = true;
-    gnome.enable = true;
-    # plasma.enable = true;
-  };
 
   virtualization = {
     enable = true;
