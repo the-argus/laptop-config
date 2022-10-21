@@ -89,6 +89,10 @@ in rec {
     "cage"
     "screen"
     "fbterm"
+    {
+      set = "unstable";
+      package = "prismlauncher";
+    }
     # {
     #   set = "unstable";
     #   package = "ue4";
