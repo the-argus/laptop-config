@@ -89,6 +89,11 @@ in rec {
     "cage"
     "screen"
     "fbterm"
+    "nodePackages_latest.prettier_d_slim"
+    {
+      set = "unstable";
+      package = "prismlauncher";
+    }
     # {
     #   set = "unstable";
     #   package = "ue4";
@@ -144,12 +149,7 @@ in rec {
       }
     ];
   };
-  additionalSystemPackages = [
-    {
-      set = "unstable";
-      package = "prismlauncher";
-    }
-  ];
+  additionalSystemPackages = [];
   name = "pkgs";
   remotebuildOverrides = {
     optimization = {
