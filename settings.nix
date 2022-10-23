@@ -90,6 +90,8 @@ in rec {
     "screen"
     "fbterm"
     "nodePackages.prettier_d_slim"
+    "nodePackages.eslint_d"
+    "deadnix"
     {
       set = "unstable";
       package = "prismlauncher";
