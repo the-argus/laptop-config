@@ -89,10 +89,6 @@ in rec {
     "cage"
     "screen"
     "fbterm"
-    {
-      set = "unstable";
-      package = "prismlauncher";
-    }
     # {
     #   set = "unstable";
     #   package = "ue4";
@@ -148,7 +144,12 @@ in rec {
       }
     ];
   };
-  additionalSystemPackages = [];
+  additionalSystemPackages = [
+    {
+      set = "unstable";
+      package = "prismlauncher";
+    }
+  ];
   name = "pkgs";
   remotebuildOverrides = {
     optimization = {
