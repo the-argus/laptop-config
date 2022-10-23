@@ -89,7 +89,7 @@ in rec {
     "cage"
     "screen"
     "fbterm"
-    "nodePackages_latest.prettier_d_slim"
+    "nodePackages.prettier_d_slim"
     {
       set = "unstable";
       package = "prismlauncher";
