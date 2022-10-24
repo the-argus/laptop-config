@@ -90,7 +90,7 @@ in rec {
     "screen"
     "fbterm"
     "nodePackages.prettier_d_slim"
-    "nodePackages.eslint_d"
+    "quick-lint-js"
     "deadnix"
     {
       set = "unstable";
