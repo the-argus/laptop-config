@@ -45,7 +45,7 @@
       theme = plymouth.themeName;
     };
   };
-  
+
   # makes plymouth wait 5 seconds while playing
   # systemd.services.plymouth-quit.serviceConfig.ExecStartPre = "${pkgs.coreutils-full}/bin/sleep 5";
 

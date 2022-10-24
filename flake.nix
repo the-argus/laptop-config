@@ -7,7 +7,7 @@
       url = "github:the-argus/nixsys";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
-      inputs.banner.url = "github:the-argus/banner.nix";
+      inputs.nvim-config.url = "github:the-argus/nvim-config";
     };
   };
 
@@ -16,7 +16,7 @@
     nixpkgs,
     nixpkgs-unstable,
     master-config,
-  } @ inputs: let
+  }: let
     supportedSystems = [
       "x86_64-linux"
       "aarch64-linux"
