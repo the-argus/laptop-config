@@ -91,7 +91,8 @@ in rec {
     "fbterm"
     "nodePackages.prettier_d_slim"
     "quick-lint-js"
-    "deadnix"
+    # "deadnix"
+    "virt-viewer"
     {
       set = "unstable";
       package = "prismlauncher";
