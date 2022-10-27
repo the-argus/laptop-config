@@ -91,12 +91,7 @@ in rec {
     "fbterm"
     "nodePackages.prettier_d_slim"
     "quick-lint-js"
-    # "deadnix"
     "virt-viewer"
-    {
-      set = "unstable";
-      package = "prismlauncher";
-    }
     # {
     #   set = "unstable";
     #   package = "ue4";
