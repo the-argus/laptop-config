@@ -81,8 +81,7 @@ in rec {
   additionalUserPackages = [
     #"steam"
     "libreoffice-fresh"
-    "godot"
-    "godot-export-templates"
+    "godot_4"
     "python310Packages.gdtoolkit"
     "aseprite"
     "cool-retro-term"
