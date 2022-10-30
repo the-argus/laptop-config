@@ -94,6 +94,7 @@ in rec {
     "nodePackages.prettier_d_slim"
     "quick-lint-js"
     "virt-viewer"
+    "blender"
     # {
     #   set = "unstable";
     #   package = "ue4";
