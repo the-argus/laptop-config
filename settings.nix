@@ -22,6 +22,7 @@ in rec {
     "slack"
     "discord"
     "ue4"
+    "aseprite"
   ];
   allowBroken = true;
   plymouth = let
@@ -86,7 +87,7 @@ in rec {
       package = "godot_4";
     }
     "python310Packages.gdtoolkit"
-    "aseprite"
+    "aseprite-unfree"
     "cool-retro-term"
     "cage"
     "screen"
