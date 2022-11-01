@@ -7,6 +7,7 @@
 }: let
   override = nixpkgs.lib.attrsets.recursiveUpdate;
 in rec {
+  theme = "amber-forest";
   # theme = "nordicWithGtkNix";
   # theme = "drifter";
   # theme = "gruvbox";
