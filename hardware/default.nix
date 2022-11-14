@@ -12,10 +12,6 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  
-  hardware.steam-hardware.enable = true;
-  hardware.pulseaudio.support32Bit = config.hardware.pulseaudio.enable;
-
 
   # time.timeZone = "America/Chicago";
 
@@ -100,13 +96,14 @@
 
   # display -------------------------------------------------------------------
   hardware.opengl = {
+    driSupport32Bit = false;
     driSupport = true;
-    driSupport32Bit = true;
     extraPackages = with pkgs; [
+      intel-media-driver
     ];
-    extraPackages32 = with pkgs.pkgsi686Linux;
-      [libva libvdpau-va-gl vaapiVdpau]
-      ++ lib.optionals config.services.pipewire.enable [pipewire];
+    # extraPackages32 = with pkgs.pkgsi686Linux;
+    #   [ libva vaapiIntel libvdpau-va-gl vaapiVdpau ]
+    #   ++ lib.optionals config.services.pipewire.enable [ pipewire ];
   };
 
   #	services.xserver.videoDrivers = [ "intel" ];
@@ -125,13 +122,11 @@
 
   # networking-----------------------------------------------------------------
   networking.hostName = hostname;
-  # networking.interfaces."wlp0s20f3" = {useDHCP = false;};
-  # networking.wireless.interfaces = ["wlp0s20f3"];
-  # networking.networkmanager.enable = true;
-  # networking.useDHCP = false;
+  networking.interfaces."wlp0s20f3" = {useDHCP = false;};
+  networking.wireless.interfaces = ["wlp0s20f3"];
+  networking.networkmanager.enable = true;
+  networking.useDHCP = false;
   # networking.wireless.enable = true;
-  networking.interfaces.enp0s20f0u2.useDHCP = true;
-  networking.wireless.enable = false;
 
   # iphone tethering
   services.usbmuxd.enable = true;

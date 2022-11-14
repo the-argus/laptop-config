@@ -24,8 +24,6 @@ in rec {
     "discord"
     "ue4"
     "aseprite"
-    "steam"
-    "steam-original"
   ];
   allowBroken = true;
   plymouth = let
@@ -103,7 +101,6 @@ in rec {
     #   set = "unstable";
     #   package = "ue4";
     # }
-    "steam"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
   usesWireless = true; # install and autostart nm-applet
