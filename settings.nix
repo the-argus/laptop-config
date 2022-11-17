@@ -24,6 +24,8 @@ in rec {
     "discord"
     "ue4"
     "aseprite"
+    "steam"
+    "steam-original"
   ];
   allowBroken = true;
   plymouth = let
@@ -85,10 +87,10 @@ in rec {
     "aseprite-unfree"
     "cool-retro-term"
     "cage"
-    "screen"
-    "fbterm"
+    # "screen"
+    # "fbterm"
     "virt-viewer"
-    "blender"
+    # "blender"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
   usesWireless = true; # install and autostart nm-applet
