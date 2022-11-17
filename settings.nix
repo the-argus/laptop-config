@@ -24,8 +24,6 @@ in rec {
     "discord"
     "ue4"
     "aseprite"
-    "steam"
-    "steam-original"
   ];
   allowBroken = true;
   plymouth = let
@@ -83,26 +81,14 @@ in rec {
   };
 
   additionalUserPackages = [
-    "steam"
     "libreoffice-fresh"
-    {
-      set = "unstable";
-      package = "godot_4";
-    }
-    "python310Packages.gdtoolkit"
     "aseprite-unfree"
     "cool-retro-term"
     "cage"
     "screen"
     "fbterm"
-    "nodePackages.prettier_d_slim"
-    "quick-lint-js"
     "virt-viewer"
     "blender"
-    # {
-    #   set = "unstable";
-    #   package = "ue4";
-    # }
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
   usesWireless = true; # install and autostart nm-applet
