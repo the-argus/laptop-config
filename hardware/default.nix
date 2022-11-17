@@ -94,18 +94,6 @@
     };
   };
 
-  # display -------------------------------------------------------------------
-  hardware.opengl = {
-    driSupport32Bit = false;
-    driSupport = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-    ];
-    # extraPackages32 = with pkgs.pkgsi686Linux;
-    #   [ libva vaapiIntel libvdpau-va-gl vaapiVdpau ]
-    #   ++ lib.optionals config.services.pipewire.enable [ pipewire ];
-  };
-
   #	services.xserver.videoDrivers = [ "intel" ];
   services.xserver = {
     videoDriver = "intel";
