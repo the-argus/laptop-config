@@ -24,6 +24,8 @@ in rec {
     "discord"
     "ue4"
     "aseprite"
+    "steam"
+    "steam-original"
   ];
   allowBroken = true;
   plymouth = let
@@ -81,7 +83,7 @@ in rec {
   };
 
   additionalUserPackages = [
-    #"steam"
+    "steam"
     "libreoffice-fresh"
     {
       set = "unstable";
