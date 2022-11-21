@@ -36,7 +36,7 @@ in rec {
   };
   extraExtraSpecialArgs = {};
   extraSpecialArgs = {};
-  additionalModules = [./shared];
+  additionalModules = [./shared ({...}: {programs.yabridge.enable = false;})];
   additionalOverlays = [];
   packageSelections = {
     # packages to override with their unstable versions
