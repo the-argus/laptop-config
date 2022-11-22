@@ -7,6 +7,7 @@
       url = "github:the-argus/nixsys";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
+      inputs.nvim-config.url = "github:the-argus/nvim-config";
     };
   };
 
