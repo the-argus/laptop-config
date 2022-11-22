@@ -596,11 +596,11 @@
         "webcord": "webcord"
       },
       "locked": {
-        "lastModified": 1669092640,
-        "narHash": "sha256-H7QHwqOjGD2JE5l9q2H4ylj4OrpHNBfUUfLILeurTMs=",
+        "lastModified": 1669129976,
+        "narHash": "sha256-2e3UzhYu76JGjOEpLpgDmUKbhvXnixbn8w6UdBD0mwM=",
         "owner": "the-argus",
         "repo": "nixsys",
-        "rev": "f5e83a21c7077401e9d6ce51f4cc28607ffaf273",
+        "rev": "70dc8fab2acc9d10ee1ca937cbef9ffbda3aca65",
         "type": "github"
       },
       "original": {
@@ -771,11 +771,11 @@
         "nixpkgs-old": "nixpkgs-old"
       },
       "locked": {
-        "lastModified": 1669093798,
-        "narHash": "sha256-2cGg/i/tBOlPCKClaCH0y5YwUoP4dUBOWNsw6/ielaA=",
+        "lastModified": 1669129761,
+        "narHash": "sha256-EaNsVzrqfpNomwUxptB1tNgN+7JPu6ayinKkEzAYnyE=",
         "owner": "the-argus",
         "repo": "nvim-config",
-        "rev": "0cfa5c03f7b9cafcc7940b7ff047ccbbc9c8255b",
+        "rev": "186cd26463f4ed6c52f7fad601a61096a430f73e",
         "type": "github"
       },
       "original": {
