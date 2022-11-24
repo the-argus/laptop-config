@@ -1,10 +1,4 @@
-{
-  this,
-  nixpkgs,
-  nixpkgs-unstable,
-  master-config,
-  ...
-}: let
+{nixpkgs, ...}: let
   override = nixpkgs.lib.attrsets.recursiveUpdate;
 in rec {
   # theme = "amber-forest";
