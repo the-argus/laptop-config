@@ -20,6 +20,7 @@ in rec {
     "aseprite"
     "steam"
     "steam-original"
+    "steam-run"
   ];
   allowBroken = true;
   plymouth = let
