@@ -62,18 +62,19 @@ in rec {
       "kitty"
       "starship"
     ];
+    remotebuild = [];
     # packages to build remotely
-    remotebuild = let
-      mkXorg = xorgPkg: {
-        set1 = "xorg";
-        set2 = xorgPkg;
-      };
-    in [
-      "dash"
-      "grub"
-      "plymouth"
-      "coreutils-full"
-    ];
+    # remotebuild = let
+    #   mkXorg = xorgPkg: {
+    #     set1 = "xorg";
+    #     set2 = xorgPkg;
+    #   };
+    # in [
+    #   "dash"
+    #   "grub"
+    #   "plymouth"
+    #   "coreutils-full"
+    # ];
   };
 
   additionalUserPackages = [
@@ -126,20 +127,20 @@ in rec {
       # "-fcx-fortran-rules"
     ];
   };
-  nix = {
-    distributedBuilds = true;
-    buildMachines = [
-      {
-        hostName = "rpmc.duckdns.org";
-        systems = ["aarch64-linux"];
-        sshUser = "servers";
-        sshKey = "/home/argus/.ssh/id_ed25519";
-        supportedFeatures = ["big-parallel"];
-        maxJobs = 4;
-        speedFactor = 2;
-      }
-    ];
-  };
+  # nix = {
+  #   distributedBuilds = true;
+  #   buildMachines = [
+  #     {
+  #       hostName = "rpmc.duckdns.org";
+  #       systems = ["aarch64-linux"];
+  #       sshUser = "servers";
+  #       sshKey = "/home/argus/.ssh/id_ed25519";
+  #       supportedFeatures = ["big-parallel"];
+  #       maxJobs = 4;
+  #       speedFactor = 2;
+  #     }
+  #   ];
+  # };
   additionalSystemPackages = [];
   name = "pkgs";
   remotebuildOverrides = {
