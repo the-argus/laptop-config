@@ -143,11 +143,11 @@ in rec {
   additionalSystemPackages = [];
   name = "pkgs";
   remotebuildOverrides = {
-    optimization = {
-      useMusl = true;
-      useFlags = true;
-      useClang = true;
-    };
+    # optimization = {
+    #   useMusl = true;
+    #   useFlags = true;
+    #   useClang = true;
+    # };
     name = "remotebuild";
   };
   unstableOverrides = {
