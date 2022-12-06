@@ -83,10 +83,6 @@ in rec {
     "aseprite-unfree"
     "cool-retro-term"
     "cage"
-    {
-        set = "unstable";
-        package = "watchmate";
-    }
     # "screen"
     # "fbterm"
     "virt-viewer"
