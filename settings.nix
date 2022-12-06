@@ -83,6 +83,7 @@ in rec {
     "aseprite-unfree"
     "cool-retro-term"
     "cage"
+    "itd"
     # "screen"
     # "fbterm"
     "virt-viewer"
