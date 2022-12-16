@@ -87,6 +87,7 @@ in rec {
     # "screen"
     # "fbterm"
     "virt-viewer"
+    "gimp"
     # "blender"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
