@@ -12,7 +12,6 @@ in rec {
   useDvorak = false;
   # unfree packages that i explicitly use
   allowedUnfree = [
-    "obsidian"
     "spotify"
     "reaper"
     "slack"
@@ -89,7 +88,6 @@ in rec {
     # "fbterm"
     "virt-viewer"
     "gimp"
-    "obsidian"
     # "blender"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
