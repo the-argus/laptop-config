@@ -94,6 +94,7 @@ in rec {
     "p4"
     "steam-run"
     "steam-run-native"
+    "nextcloud-client"
     # "blender"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
