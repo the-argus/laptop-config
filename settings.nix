@@ -13,7 +13,8 @@ in rec {
   # unfree packages that i explicitly use
   allowedUnfree = [
     "p4"
-    "p4v"
+    "steam-run"
+    "steam-run-native"
     "spotify"
     "reaper"
     "slack"
@@ -91,7 +92,8 @@ in rec {
     "virt-viewer"
     "gimp"
     "p4"
-    "p4v"
+    "steam-run"
+    "steam-run-native"
     # "blender"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
