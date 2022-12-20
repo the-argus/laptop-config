@@ -12,6 +12,7 @@ in rec {
   useDvorak = false;
   # unfree packages that i explicitly use
   allowedUnfree = [
+    "obsidian"
     "p4"
     "steam-run"
     "steam-run-native"
@@ -23,7 +24,6 @@ in rec {
     "aseprite"
     "steam"
     "steam-original"
-    "steam-run"
   ];
   allowBroken = true;
   plymouth = let
@@ -95,6 +95,7 @@ in rec {
     "steam-run"
     "steam-run-native"
     "nextcloud-client"
+    "obsidian"
     # "blender"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
