@@ -9,7 +9,7 @@ in rec {
   username = "argus";
   hostname = "evil";
   terminal = "kitty";
-  useDvorak = false;
+  useDvorak = true;
   # unfree packages that i explicitly use
   allowedUnfree = [
     "obsidian"
