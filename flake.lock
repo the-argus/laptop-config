@@ -674,11 +674,11 @@
         "webcord": "webcord"
       },
       "locked": {
-        "lastModified": 1672259953,
-        "narHash": "sha256-HJ3qbXKeoEsciRAIMYVNFtrw+uDMMt2PQc0SsJEKuu8=",
+        "lastModified": 1672260024,
+        "narHash": "sha256-9ob/59rQXnAcfkSoHPGb1mmVO27WgoK/POAdDaQgAVU=",
         "owner": "the-argus",
         "repo": "nixsys",
-        "rev": "9bc39e662672023173782f531075f439f4590f13",
+        "rev": "de3a9638dfc37aead96c5a92365818a939b90300",
         "type": "github"
       },
       "original": {
