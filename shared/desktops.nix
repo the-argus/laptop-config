@@ -1,7 +1,10 @@
 {...}: {
   desktops = {
     enable = true;
-    sway.enable = true;
+    sway = {
+      enable = true;
+      nobar = true;
+    };
     awesome.enable = true;
     ratpoison.enable = true;
     qtile.enable = true;
