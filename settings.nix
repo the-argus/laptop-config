@@ -96,6 +96,7 @@ in rec {
     "steam-run-native"
     "nextcloud-client"
     "obsidian"
+    "eww"
     # "blender"
   ]; # will be evaluated later
   hardwareConfiguration = [./hardware ./shared];
