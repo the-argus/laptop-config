@@ -40,7 +40,7 @@
       services.swraid.enable = false;
     };
     plymouth = {
-      enable = true;
+      enable = false;
       themePackages = [pkgs.plymouth-themes-package];
       theme = plymouth.themeName;
     };
