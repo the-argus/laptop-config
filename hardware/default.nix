@@ -13,6 +13,11 @@
     ./hardware-configuration.nix
   ];
 
+  services.printing.enable = true;
+  services.avahi.enable = true;
+  # for a WiFi printer
+  services.avahi.openFirewall = true;
+
   time.timeZone = "America/Chicago";
 
   # dual booting with windows boot loader mounted on /efi
