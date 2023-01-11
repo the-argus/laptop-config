@@ -12,6 +12,7 @@
   imports = [
     ./hardware-configuration.nix
   ];
+  environment.variables.EDITOR = "nvim";
 
   services.printing.enable = true;
   services.avahi.enable = true;
