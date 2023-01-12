@@ -82,10 +82,9 @@ in rec {
   };
 
   additionalUserPackages = [
-    "kdevelop"
-    "libreoffice-fresh"
+    # "libreoffice-fresh"
     "aseprite-unfree"
-    "cool-retro-term"
+    # "cool-retro-term"
     "cage"
     "itd"
     # "screen"
